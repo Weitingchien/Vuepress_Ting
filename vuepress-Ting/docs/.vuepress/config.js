@@ -3,7 +3,7 @@ module.exports = {
     description: 'Vue.js、JavaScript、Note',
     base:'/Vuepress_Ting/',//github儲存庫名稱
     head: [
-        ['link', { rel: 'icon', href: '/logo.png' }]
+        ['link', { rel: 'icon', href: '/vuejs-logo.png' }]
     ],
 
     themeConfig: {
