@@ -5,18 +5,6 @@ module.exports = {
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
-    plugins: {
-        '@vssue/vuepress-plugin-vssue': {
-            // 设置 `platform` 而不是 `api`
-            platform: 'github-v4',
-            // 其他的 Vssue 配置
-            owner: 'Weitingchien',
-            repo: 'Vuepress_Ting',
-            clientId: 'a81389f92909a07e0ff6',
-            clientSecret: '834c9d86e5d0f35fecb1535a300d044724c3a4a2',
-            autoCreateIssue:true
-          },
-    },
 
     themeConfig: {
         nav:[//navbar按鈕
@@ -56,6 +44,6 @@ module.exports = {
         ],
         sitemap: {
             hostname: 'https://weitingchien.github.io/Vuepress_Ting/',
-        }
-    }
+        },
+    },
 }

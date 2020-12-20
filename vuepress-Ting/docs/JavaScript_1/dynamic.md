@@ -1,5 +1,9 @@
-# 2020/09-14/-動態型別(Dynamic Type)
-
+---
+title: 動態型別(Dynamic Type)
+date: 2020-09-14
+tags:
+  - JavaScript
+---
 ## 定義
 執行階段才進行型別檢查，相反的在撰寫時就可明確定義變數的型別稱為靜態型別
 
@@ -45,3 +49,5 @@ console.log(typeof brand);//string
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

@@ -1,4 +1,9 @@
-# 2020/11-20/-JSON(JavaScript Object Notation) & AJAX(Asynchronous JavaScript + XML)
+---
+title: JSON(JavaScript Object Notation) & AJAX(Asynchronous JavaScript + XML)
+date: 2020-11-20
+tags:
+  - JavaScript
+---
 
 ## JSON
 
@@ -325,3 +330,5 @@ getOpendata();
 [Wang Casper 鐵人賽：JavaScript Await 與 Async](https://wcc723.github.io/javascript/2017/12/30/javascript-async-await/)<br/>
 
 [Noob's Space-我要學會 JS(三)：callback、Promise 和 async/await 那些事兒](https://noob.tw/js-async/)<br/>
+
+<Vssue  />
