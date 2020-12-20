@@ -1,5 +1,9 @@
-# 2020/12-07/-立即函式(IIFE) & 閉包(Closure) & this的運作
-
+---
+title: 立即函式(IIFE) & 閉包(Closure) & this的運作
+date: 2020-12-07
+tags:
+  - JavaScript
+---
 ## 立即函式-IIFE(Immediately Invoked Functions Expressions)
 - 立即執行
 - 限制變數的作用域來避免汙染全域環境
@@ -273,3 +277,5 @@ getbind('Kevin');
 [MDN_Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)<br/>
 
 [Yakim shu-第十七週 JavaScript 進階：什麼是閉包 Closure 與實際應用](https://yakimhsu.com/project/project_w17_advancedJS_03_Clousure.html)
+
+<Vssue  />

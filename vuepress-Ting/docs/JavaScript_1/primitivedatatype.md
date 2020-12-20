@@ -1,4 +1,9 @@
-# 2020/09-15/-型別(Type)
+---
+title: 型別(Type)
+date: 2020-09-15
+tags:
+  - JavaScript
+---
 
 ## 原始型別(Primitive Data Type)
 
@@ -63,3 +68,5 @@ __proto__是這個包裹物件的原型，可用的方法都在這個__proto__�
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

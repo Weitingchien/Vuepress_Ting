@@ -1,5 +1,9 @@
-# 2020/09-11/-let、const、var不同的地方
-
+---
+title: let、const、var不同的地方
+date: 2020-09-11
+tags:
+  - JavaScript
+---
 ## 暫時性死區(Temporal Dead Zone(TDZ))
 
 ```javascript
@@ -156,3 +160,5 @@ console.log(i);//Uncaught ReferenceError: i is not defined
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

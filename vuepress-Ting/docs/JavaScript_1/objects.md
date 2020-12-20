@@ -1,4 +1,9 @@
-# 2020/09-21/-物件(Objects)
+---
+title: 物件(Objects)
+date: 2020-09-21
+tags:
+  - JavaScript
+---
 
 ```javascript
 let library = {
@@ -418,3 +423,5 @@ console.log(book[3]);//使用中括號新增值的時候，中間略過的會補
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

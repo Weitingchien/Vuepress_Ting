@@ -16,4 +16,5 @@ Vue.use(Vssue, {
   repo: 'Vuepress_Ting',
   clientId: 'a81389f92909a07e0ff6',
   clientSecret: '834c9d86e5d0f35fecb1535a300d044724c3a4a2', // 只有在使用某些平台时需要
+  autoCreateIssue:true
 })

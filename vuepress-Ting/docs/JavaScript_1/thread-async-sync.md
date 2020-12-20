@@ -1,4 +1,9 @@
-# 2020/09-12/-執行緒(Thread)&同步(Synchronus)、非同步(Asynchronus)
+---
+title: 執行緒(Thread)&同步(Synchronus)、非同步(Asynchronus)
+date: 2020-09-12
+tags:
+  - JavaScript
+---
 
 ## JavaScript是單執行緒的程式
 
@@ -72,3 +77,5 @@ all();
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

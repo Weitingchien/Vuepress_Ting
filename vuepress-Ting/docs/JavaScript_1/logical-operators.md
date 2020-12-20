@@ -1,4 +1,9 @@
-# 2020/09-20/-邏輯運算子(Logical operators)、函式預設值(Default value)
+---
+title: 邏輯運算子(Logical operators)、函式預設值(Default value)
+date: 2020-09-20
+tags:
+  - JavaScript
+---
 
 ### JavaScript-邏輯運算子(Logical operators)
 ```javascript
@@ -23,3 +28,5 @@ store(2000);//購買後剩餘18000元
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

@@ -1,4 +1,9 @@
-# 2020/09-16/-優先性(Precedence)及相依性(Associativity)
+---
+title: 優先性(Precedence)及相依性(Associativity)
+date: 2020-09-16
+tags:
+  - JavaScript
+---
 
 ### 優先性(Precedence)
 
@@ -26,3 +31,5 @@ a接受的是表達式回傳的結果，所以會是3，而a和name.Tony沒有�
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

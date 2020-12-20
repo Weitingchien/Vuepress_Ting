@@ -1,4 +1,9 @@
-# 2020/09-10/-範圍鍊(Scope Chain)
+---
+title: 範圍鍊(Scope Chain)
+date: 2020-09-10
+tags:
+  - JavaScript
+---
 
 ![全域與區域變數作用範圍](https://i.imgur.com/0Hoe3i8.png)
 
@@ -21,3 +26,5 @@ family1();
 
 參考文獻:<br/>
 - [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />

@@ -1,4 +1,9 @@
-# 2020/09-17/-寬鬆相等(loose equals)、嚴格相等(strict equals)
+---
+title: 寬鬆相等(loose equals)、嚴格相等(strict equals)
+date: 2020-09-17
+tags:
+  - JavaScript
+---
 
 ### 嚴格相等(strict equals)
 
@@ -47,3 +52,5 @@ console.log([] == []);//false
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")
+
+<Vssue  />
