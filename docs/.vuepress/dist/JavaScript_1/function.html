@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2020/12-07/-立即函式(IIFE) &amp; 閉包(Closure) &amp; this的運作 | Ting</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/Vuepress_Ting/logo.png">
+    <meta name="description" content="Vue.js、JavaScript、Note">
+    
+    <link rel="preload" href="/Vuepress_Ting/assets/css/0.styles.2246ea5a.css" as="style"><link rel="preload" href="/Vuepress_Ting/assets/js/app.c4c2374a.js" as="script"><link rel="preload" href="/Vuepress_Ting/assets/js/2.cce45e74.js" as="script"><link rel="preload" href="/Vuepress_Ting/assets/js/9.1a300b4f.js" as="script"><link rel="prefetch" href="/Vuepress_Ting/assets/js/10.7b22b9b9.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/11.e43f648c.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/12.5453869e.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/13.c7164568.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/14.55aad7c0.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/15.eb410b1b.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/16.dec9c53c.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/17.36d26ab1.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/18.9115d236.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/19.bb3a0165.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/20.27e2c7a2.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/21.ec599110.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/22.97ce47e6.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/23.aec6ab9d.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/24.2b80b536.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/3.20e68941.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/4.2e789102.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/5.ac13403b.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/6.7dc41bc7.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/7.4a360746.js"><link rel="prefetch" href="/Vuepress_Ting/assets/js/8.0b9c6d07.js">
+    <link rel="stylesheet" href="/Vuepress_Ting/assets/css/0.styles.2246ea5a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Vuepress_Ting/" class="home-link router-link-active"><!----> <span class="site-name">Ting</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Vuepress_Ting/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/Weitingchien" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://twitter.com/WeitingCHIEN1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  twitter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Vuepress_Ting/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/Weitingchien" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://twitter.com/WeitingCHIEN1" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  twitter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Vuepress_Ting/" aria-current="page" class="sidebar-link">Home</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/Vuepress_Ting/JavaScript_1/" class="sidebar-heading clickable router-link-active open"><span>JavaScript</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/Vuepress_Ting/JavaScript_1/scopechain.html" class="sidebar-link">2020/09-10/-範圍鍊(Scope Chain)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/hoisting.html" class="sidebar-link">2020/09-10/-提升(Hoisting)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/varletconst.html" class="sidebar-link">2020/09-11/-let、const、var不同的地方</a></li><li><a href="/Vuepress_Ting/JavaScript_1/thread-async-sync.html" class="sidebar-link">2020/09-12/-執行緒(Thread)&amp;同步(Synchronus)、非同步(Asynchronus)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/statement-expression.html" class="sidebar-link">2020/09-14/-陳述式(Statement)、表達式(Expression)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/dynamic.html" class="sidebar-link">2020/09-14/-動態型別(Dynamic Type)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/primitivedatatype.html" class="sidebar-link">2020/09-15/-型別(Type)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/precedenceassociativity.html" class="sidebar-link">2020/09-16/-優先性(Precedence)及相依性(Associativity)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/looseequals-strictequals.html" class="sidebar-link">2020/09-17/-寬鬆相等(loose equals)、嚴格相等(strict equals)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/truthy-falsy.html" class="sidebar-link">2020/09-19/-真值(Truthy)與假值(Falsy)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/logical-operators.html" class="sidebar-link">2020/09-20/-邏輯運算子(Logical operators)、函式預設值(Default value)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/objects.html" class="sidebar-link">2020/09-21/-物件(Objects)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/ajax-json.html" class="sidebar-link">2020/11-20/-JSON(JavaScript Object Notation) &amp; AJAX(Asynchronous JavaScript + XML)</a></li><li><a href="/Vuepress_Ting/JavaScript_1/function.html" aria-current="page" class="active sidebar-link">2020/12-07/-立即函式(IIFE) &amp; 閉包(Closure) &amp; this的運作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Vuepress_Ting/JavaScript_1/function.html#立即函式-iife-immediately-invoked-functions-expressions" class="sidebar-link">立即函式-IIFE(Immediately Invoked Functions Expressions)</a></li><li class="sidebar-sub-header"><a href="/Vuepress_Ting/JavaScript_1/function.html#參數傳遞" class="sidebar-link">參數傳遞</a></li><li class="sidebar-sub-header"><a href="/Vuepress_Ting/JavaScript_1/function.html#閉包-closure" class="sidebar-link">閉包(Closure)</a></li><li class="sidebar-sub-header"><a href="/Vuepress_Ting/JavaScript_1/function.html#this-物件的方法調用" class="sidebar-link">this:物件的方法調用</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/Vuepress_Ting/Vue_2/" class="sidebar-heading clickable"><span>Vue.js</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_2020-12-07-立即函式-iife-閉包-closure-this的運作"><a href="#_2020-12-07-立即函式-iife-閉包-closure-this的運作" class="header-anchor">#</a> 2020/12-07/-立即函式(IIFE) &amp; 閉包(Closure) &amp; this的運作</h1> <h2 id="立即函式-iife-immediately-invoked-functions-expressions"><a href="#立即函式-iife-immediately-invoked-functions-expressions" class="header-anchor">#</a> 立即函式-IIFE(Immediately Invoked Functions Expressions)</h2> <ul><li>立即執行</li> <li>限制變數的作用域來避免汙染全域環境</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">第</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">次</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">who</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> who<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'Ting'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/fmrE3q3.png" alt="Function_IIFE01"></p> <h2 id="參數傳遞"><a href="#參數傳遞" class="header-anchor">#</a> 參數傳遞</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">getMoney</span><span class="token punctuation">(</span><span class="token parameter">b</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  b<span class="token punctuation">.</span>num <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/WV0hXR6.png" alt="Function_IIFE02"></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">function</span> <span class="token function">getArg</span><span class="token punctuation">(</span><span class="token parameter">person<span class="token punctuation">,</span> money</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//arguments為函式內建的參數，是個類陣列(Array-like)(一樣有length屬性以及index，但無法使用array相關的方法)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> money<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">getArg</span><span class="token punctuation">(</span><span class="token string">'Ting'</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/79uN3Af.png" alt="Function_IIFE03"></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//建立一個物件，並且把此物件傳入changeBookVal</span>
+<span class="token keyword">const</span> lib <span class="token operator">=</span> <span class="token punctuation">{</span>
+  bookTitle01<span class="token operator">:</span> <span class="token string">'JavaScript'</span><span class="token punctuation">,</span>
+  bookTitle02<span class="token operator">:</span> <span class="token string">'jQuery'</span><span class="token punctuation">,</span>
+  bookTitle03<span class="token operator">:</span> <span class="token string">'python'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">changeBookVal</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  obj<span class="token punctuation">.</span>bookTitle01 <span class="token operator">=</span> <span class="token string">'Nodejs'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>lib<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">changeBookVal</span><span class="token punctuation">(</span>lib<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/cGw5k7Y.png" alt="Function_IIFE04"></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">//把函式當成一個參數傳入另一個函式，並且由另一個函式所執行稱為callback function</span>
+<span class="token keyword">function</span> <span class="token function">supermarket</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">What do you feel like? </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>a<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">handFoodFn</span><span class="token punctuation">(</span><span class="token parameter">test</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">I feel like eating a sandwich</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">handFoodFn</span><span class="token punctuation">(</span>supermarket<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/Cm7HVFt.png" alt="Function_IIFE05"></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">function</span> <span class="token function">score</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  num <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span><span class="token comment">//直接覆蓋num的值，才能改變參數原本所定義的值</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//函式提升時，不會影響到參數的值，也就是在創造階段時函式提升不會在最前面</span>
+  <span class="token keyword">function</span> <span class="token function">num</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">score</span><span class="token punctuation">(</span><span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/HhSCqd3.png" alt="Function_IIFE06"></p> <h2 id="閉包-closure"><a href="#閉包-closure" class="header-anchor">#</a> 閉包(Closure)</h2> <h3 id="函式工廠-function-factories"><a href="#函式工廠-function-factories" class="header-anchor">#</a> 函式工廠(Function Factories)</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> money <span class="token operator">=</span> num <span class="token operator">||</span> <span class="token number">5000</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">product</span><span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    money <span class="token operator">=</span> money <span class="token operator">-</span> price<span class="token punctuation">;</span><span class="token comment">//因範圍鍊所以會向外查找money這個變數，</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> bookCost <span class="token operator">=</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">/*執行一次store，並且宣告cost變數參照store函式裡宣告的money變數，導致money記憶體不會被釋放*/</span>
+<span class="token function">bookCost</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//100這個參數值是傳進內層的函式，也就是對應至price</span>
+
+<span class="token keyword">let</span> furnitureCost <span class="token operator">=</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token number">20000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">furnitureCost</span><span class="token punctuation">(</span><span class="token number">15000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bookCost <span class="token operator">===</span> furnitureCost<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//參考路徑不同</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/iqJMi0e.png" alt="Function_IIFE07"></p> <h3 id="私有方法-private-methods"><a href="#私有方法-private-methods" class="header-anchor">#</a> 私有方法(Private methods)</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> money <span class="token operator">=</span> num <span class="token operator">||</span> <span class="token number">5000</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">increase</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        money <span class="token operator">+=</span> price<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">decrease</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        money <span class="token operator">-=</span> price<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">value</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> money<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> bookCost <span class="token operator">=</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+bookCost<span class="token punctuation">.</span><span class="token function">increase</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bookCost<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> furnitureCost <span class="token operator">=</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token number">20000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+furnitureCost<span class="token punctuation">.</span><span class="token function">decrease</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>furnitureCost<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/jT1LSBK.png" alt="Function_IIFE08"></p> <h2 id="this-物件的方法調用"><a href="#this-物件的方法調用" class="header-anchor">#</a> this:物件的方法調用</h2> <ul><li>執行函式時this就會產生</li> <li>函式中的this不指向該函式</li> <li>this僅取呼叫方法有關</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">function</span> <span class="token function">drinks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dessert<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> food <span class="token operator">=</span> <span class="token punctuation">{</span>
+  dessert<span class="token operator">:</span> <span class="token string">'chocolate'</span><span class="token punctuation">,</span>
+  drinks<span class="token operator">:</span> drinks<span class="token punctuation">,</span>
+  restaurant<span class="token operator">:</span><span class="token punctuation">{</span>
+    drinks<span class="token operator">:</span> drinks<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+food<span class="token punctuation">.</span><span class="token function">drinks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+food<span class="token punctuation">.</span>restaurant<span class="token punctuation">.</span><span class="token function">drinks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/H7MQko4.png" alt="Function_this-01"></p> <h3 id="this-簡易呼叫-simple-call"><a href="#this-簡易呼叫-simple-call" class="header-anchor">#</a> this:簡易呼叫(Simple call)</h3> <ul><li><p>Simple call的this指向window</p></li> <li><p>直接呼叫的方式屬於Simple call</p></li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">var</span> cookie <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+
+<span class="token comment">//callback</span>
+<span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token parameter">sellingPrice</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> cookie <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">sellingPrice</span><span class="token punctuation">(</span>cookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">store</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">cookie</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>cookie<span class="token punctuation">,</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">售價:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>cookie<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">元</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">/*簡易呼叫的this指向window，
+  而在函式外層宣告cookie這個變數，會變成全域變數*/</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> jacket <span class="token operator">=</span> <span class="token number">2000</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> apparelStore <span class="token operator">=</span> <span class="token punctuation">{</span>
+  jacket<span class="token operator">:</span> <span class="token number">2500</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">discount</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//var vm = this;//使用一個變數指向this，便可指向apparelStore內的jacket</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>jacket<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//記得上面的var vm = this;註解打開時，這邊不要忘記改成vm.jacket</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+apparelStore<span class="token punctuation">.</span><span class="token function">discount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/6isG2WC.png" alt="Function_this-03"></p> <h3 id="this-call、apply、bind"><a href="#this-call、apply、bind" class="header-anchor">#</a> this: call、apply、bind</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">var</span> pencilbox <span class="token operator">=</span> <span class="token string">'pen'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> table <span class="token operator">=</span> <span class="token punctuation">{</span>
+  book<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  pencilbox<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">tableAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  table<span class="token punctuation">.</span>eraser <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getAll</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> owner</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">tableAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> id<span class="token punctuation">,</span> owner<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">getAll</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>table<span class="token punctuation">,</span> <span class="token number">01</span><span class="token punctuation">,</span> <span class="token string">'Tony'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//第一個參數是this，替換原本的this</span>
+<span class="token function">getAll</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>table<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">02</span><span class="token punctuation">,</span> <span class="token string">'John'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//使用陣列把參數代入</span>
+
+<span class="token keyword">var</span> getbind <span class="token operator">=</span> <span class="token function">getAll</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>table<span class="token punctuation">,</span> <span class="token number">03</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//bind已經決定this調用方式，所以不是Simple call</span>
+
+<span class="token function">getbind</span><span class="token punctuation">(</span><span class="token string">'Kevin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p><img src="https://i.imgur.com/tt2KTe5.png" alt="Function_this-04"></p> <p>待更新...</p> <p>參考文獻:<br></p> <p><a href="https://www.hexschool.com/courses/js-core.html" title="Title" target="_blank" rel="noopener noreferrer">JavaScript 核心篇<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br></p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank" rel="noopener noreferrer">MDN_The arguments object<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br></p> <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank" rel="noopener noreferrer">MDN_Closures<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br></p> <p><a href="https://yakimhsu.com/project/project_w17_advancedJS_03_Clousure.html" target="_blank" rel="noopener noreferrer">Yakim shu-第十七週 JavaScript 進階：什麼是閉包 Closure 與實際應用<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Vuepress_Ting/JavaScript_1/ajax-json.html" class="prev">
+        2020/11-20/-JSON(JavaScript Object Notation) &amp; AJAX(Asynchronous JavaScript + XML)
+      </a></span> <span class="next"><a href="/Vuepress_Ting/Vue_2/basic.html">
+        待新增
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Vuepress_Ting/assets/js/app.c4c2374a.js" defer></script><script src="/Vuepress_Ting/assets/js/2.cce45e74.js" defer></script><script src="/Vuepress_Ting/assets/js/9.1a300b4f.js" defer></script>
+  </body>
+</html>
