@@ -24,7 +24,7 @@ module.exports = {
             '/',
             {
                 title:'JavaScript',
-                path:'/JavaScript_1/',
+                path:'',
                 children: [
                     '/JavaScript_1/scopechain',
                     '/JavaScript_1/hoisting.md',
@@ -44,7 +44,7 @@ module.exports = {
             },
             {
                 title:'Vue.js',
-                path:'/Vue_2/',
+                path:'',
                 children: [
                     '/Vue_2/basic',
                 ]
