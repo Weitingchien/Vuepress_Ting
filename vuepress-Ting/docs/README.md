@@ -11,7 +11,7 @@
 
 
 <div>
-  <b-carousel
+<!--   <b-carousel
     id="carousel-no-animation"
     style="text-shadow: 0px 0px 2px #000"
     no-animation
@@ -25,5 +25,7 @@
     <b-carousel-slide
       img-src="https://i.imgur.com/Vkyju00.png"
     ></b-carousel-slide>
-  </b-carousel>
+  </b-carousel> -->
+  <Card />
+  <Home />
 </div>

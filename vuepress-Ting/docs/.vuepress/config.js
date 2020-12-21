@@ -3,8 +3,16 @@ module.exports = {
     description: 'Vue.js、JavaScript、Note',
     base:'/Vuepress_Ting/',//github儲存庫名稱
     head: [
-        ['link', { rel: 'icon', href: '/vuejs-logo.png' }]
+        ['link', { rel: 'icon', href: '/vuejs-logo.png' }],
+        ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+        ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+        ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+        ['link', { rel: 'apple-touch-icon', href: '/public/vuejsappletouch.png' }],
+        ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/public/vuejsappleicon.png' }],
+        ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
     ],
+    plugins: [['@vuepress/back-to-top'],['@vuepress/nprogress'],['@vuepress/pwa'],['@vuepress/google-analytics',{'ga': 'UA-177623947-1' }]],// UA-00000000-0
 
     themeConfig: {
         nav:[//navbar按鈕
