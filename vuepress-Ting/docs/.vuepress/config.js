@@ -10,7 +10,8 @@ module.exports = {
         ['link', { rel: 'apple-touch-icon', href: '/public/vuejsappletouch.png' }],
         ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
         ['meta', { name: 'msapplication-TileImage', content: '/public/vuejsappleicon.png' }],
-        ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+        ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+        ['meta', { name: 'google-site-verification', content: 'VKqM8Btzdv1WdFMEtWbBzuL_5CEDC5O5YfaUajv8IYE'}],
     ],
     plugins: [['@vuepress/back-to-top'],['@vuepress/nprogress'],['@vuepress/pwa'],['@vuepress/google-analytics',{'ga': 'UA-177623947-1' }]],// UA-00000000-0
 
