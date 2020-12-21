@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/scopechain.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/hoisting.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/varletconst.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/thread-async-sync.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/statement-expression.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/dynamic.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/primitivedatatype.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/precedenceassociativity.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/looseequals-strictequals.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/truthy-falsy.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/logical-operators.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/objects.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/ajax-json.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/JavaScript_1/function.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://weitingchien.github.io/Vuepress_Ting/Vue_2/basic.html</loc>
+  <lastmod>2020-12-21T12:58:02+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
