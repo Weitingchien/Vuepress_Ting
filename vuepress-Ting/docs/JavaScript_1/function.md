@@ -266,6 +266,31 @@ getbind('Kevin');
 ![Function_this-04](https://i.imgur.com/tt2KTe5.png)
 
 
+### this: DOM
+
+```javascript
+
+init();
+
+function init(){
+  const main = document.querySelectorAll('li');
+  addAllListener(main);
+};
+
+function addAllListener(main){
+  for(let i = 0; i < main.length; i++){
+    main[i].addEventListener('click', changeSize);
+  }
+};
+
+function changeSize() {
+  console.log(this);
+   this.style.fontSize = '25px';//this綁定所點擊的元素
+};
+
+```
+![Function_this-05](https://i.imgur.com/me8zr8c.png)
+
 待更新...
 
 參考文獻:<br/>
