@@ -265,6 +265,26 @@ getbind('Kevin');
 
 ![Function_this-04](https://i.imgur.com/tt2KTe5.png)
 
+### this: 練習01
+
+```javascript
+
+var chocolate = 3;
+
+var cookie = {
+  chocolate: 1,
+  strawberry: 2,
+  butter: 3,
+  taste: function(a, b, c){
+    return `${this.chocolate}  ${a}, ${b}, ${c}`;
+  }
+}
+
+var getCookieRone = cookie.taste;
+var getCookieRtwo = getCookieRone.bind(null, 'redBean');//傳入null或undefined會指向全域
+console.log(getCookieRtwo('Matcha', 'peanut'));
+
+```
 
 ### this: DOM
 
