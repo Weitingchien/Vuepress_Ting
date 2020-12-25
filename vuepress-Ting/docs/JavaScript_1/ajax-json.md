@@ -1,8 +1,7 @@
 ---
 title: JSON(JavaScript Object Notation) & AJAX(Asynchronous JavaScript + XML)
 date: 2020-11-20
-tags:
-  - JavaScript
+tags: ['JavaScript', 'JSON', 'AJAX']
 ---
 
 ## JSON

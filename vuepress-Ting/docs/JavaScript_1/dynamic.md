@@ -1,8 +1,8 @@
 ---
 title: 動態型別(Dynamic Type)
 date: 2020-09-14
-tags:
-  - JavaScript
+tags: ['JavaScript', 'Dynamic Type', '動態型別']
+description: 動態型別(Dynamic Type)
 ---
 
 ## 定義

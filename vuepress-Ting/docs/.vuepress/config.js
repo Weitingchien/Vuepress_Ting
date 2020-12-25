@@ -13,7 +13,20 @@ module.exports = {
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         ['meta', { name: 'google-site-verification', content: 'VKqM8Btzdv1WdFMEtWbBzuL_5CEDC5O5YfaUajv8IYE'}],
     ],
-    plugins: [['@vuepress/back-to-top'],['@vuepress/nprogress'],['@vuepress/pwa'],['@vuepress/google-analytics',{'ga': 'UA-177623947-1' }]],// UA-00000000-0
+    plugins: [['@vuepress/back-to-top'],['@vuepress/nprogress'],['@vuepress/pwa'],['@vuepress/google-analytics',{'ga': 'UA-177623947-1' }],// UA-00000000-0
+    [{seo:{
+        siteTitle: (_, $site) => $site.title,
+        title: $page => $page.title,
+        description: $page => $page.frontmatter.description,
+        author: (_, $site) => $site.themeConfig.author,
+        tags: $page => $page.frontmatter.tags,
+        twitterCard: _ => 'summary_large_image',
+        type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+        url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+        image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http') || '') + $page.frontmatter.image),
+        publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+        modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+    }}]],
 
     themeConfig: {
         nav:[//navbar按鈕
