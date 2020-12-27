@@ -286,6 +286,24 @@ console.log(getCookieRtwo('Matcha', 'peanut'));
 
 ```
 
+![Function_this-06](https://i.imgur.com/EMFBxj1.png)
+
+### this: 練習02
+
+```javascript
+var name = 'Kevin';
+
+var person = {
+  name: 'John',
+  fn:() => {
+    console.log(this.name);////箭頭函式的this會指向全域
+  }
+};
+
+person.fn();
+
+```
+![Function_this-07](https://i.imgur.com/dsR5yUe.png)
 ### this: DOM
 
 ```javascript
