@@ -330,6 +330,22 @@ function changeSize() {
 
 ![img](https://i.imgur.com/Ak1fqYZ.gif)
 
+
+## Currying(柯理化)
+
+```javascript
+
+const curry = function multiplication(x){
+  return function(y){
+    return console.log(x * y);
+  }
+};
+
+let num = curry(2);
+num(4);
+
+```
+
 待更新...
 
 參考文獻:<br/>
