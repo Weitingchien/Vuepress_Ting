@@ -333,6 +333,8 @@ function changeSize() {
 
 ## Currying(柯理化)
 
+> 柯里化（英語：Currying），又譯為卡瑞化或加里化，是把接受多個參數的函數變換成接受一個單一參數（最初函數的第一個參數）的函數，並且返回接受餘下的參數而且返回結果的新函數的技術。這個技術由克里斯多福·斯特雷奇以邏輯學家哈斯凱爾·加里命名的，儘管它是Moses Schönfinkel和戈特洛布·弗雷格發明的。
+
 ```javascript
 
 const curry = function multiplication(x){
@@ -345,6 +347,8 @@ let num = curry(2);
 num(4);
 
 ```
+
+![Function_currying-01](https://i.imgur.com/lUjKjQ8.png)
 
 待更新...
 
