@@ -296,7 +296,7 @@ var name = 'Kevin';
 var person = {
   name: 'John',
   fn:() => {
-    console.log(this.name);////箭頭函式的this會指向全域
+    console.log(this.name);//箭頭函式的this會指向全域
   }
 };
 
@@ -360,6 +360,8 @@ num(4);
 
 [MDN_Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)<br/>
 
-[Yakim shu-第十七週 JavaScript 進階：什麼是閉包 Closure 與實際應用](https://yakimhsu.com/project/project_w17_advancedJS_03_Clousure.html)
+[Yakim shu-第十七週 JavaScript 進階：什麼是閉包 Closure 與實際應用](https://yakimhsu.com/project/project_w17_advancedJS_03_Clousure.html)<br/>
+
+[wiki 柯里化](https://zh.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96)
 
 <Vssue  />
