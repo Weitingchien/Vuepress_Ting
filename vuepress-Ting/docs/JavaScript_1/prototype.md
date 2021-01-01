@@ -1,6 +1,6 @@
 ---
 title: 原型鍊(Prototype Chain)
-date: 2020-11-46
+date: 2021-01-02
 tags:
   - JavaScript
 ---
