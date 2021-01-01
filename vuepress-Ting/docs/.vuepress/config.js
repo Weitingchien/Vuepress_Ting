@@ -54,6 +54,7 @@ module.exports = {
                     '/JavaScript_1/objects.md',
                     '/JavaScript_1/ajax-json.md',
                     '/JavaScript_1/function.md',
+                    '/JavaScript_1/prototype.md',
                 ]
             },
             {
