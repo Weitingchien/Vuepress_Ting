@@ -11,11 +11,12 @@ tags:
 但是可以透過原型(prototype-based)達到差不多的功能
 
 - ES6的class只是個語法糖
+
 ```javascript
 
 const num = [1,2,3];
 
-num.forEach((item, index) => {
+num.forEach((item, index) => {//forEach屬於陣列原型的屬性
   console.log(`item:${item}, index: ${index}`);
 });
 
