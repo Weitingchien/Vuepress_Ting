@@ -37,7 +37,7 @@ Dorayaki.prototype.List = function() {//在Dorayaki新增原型的方法
   console.log(`口味:${this.flavors} 數量:${this.amount}`);
 }
 
-const John = new Dorayaki('red bean', 3);//使用new運算子建立一個函式，並且連結原本的建構物件(Dorayaki)
+const John = new Dorayaki('red bean', 3);//使用new運算子建立一個新的物件，並且連結原本的建構物件(Dorayaki)
 const Kevin = new Dorayaki('Hokkaido Milk', 5);
 
 John.List();
