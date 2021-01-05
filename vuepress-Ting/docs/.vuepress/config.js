@@ -8,7 +8,7 @@ module.exports = {
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
         ['link', { rel: 'apple-touch-icon', href: '/public/vuejsappletouch.png' }],
-        ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
+        ['link', { rel: 'mask-icon', href: '/public/vuejsappleicon.png', color: '#3eaf7c' }],
         ['meta', { name: 'msapplication-TileImage', content: '/public/vuejsappleicon.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         ['meta', { name: 'google-site-verification', content: 'VKqM8Btzdv1WdFMEtWbBzuL_5CEDC5O5YfaUajv8IYE'}],
@@ -27,9 +27,9 @@ module.exports = {
         publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
         modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }}],
-    ['sitemap',{ hostname: 'https://weitingchien.github.io/Vuepress_Ting/' }],
-    ['@vuepress/last-updated',{ dateOptions:{ hour12: false} }],
-    ['@vuepress/pwa',{ serviceWorker: true, updatePopup: true }],
+    ['sitemap',{hostname: 'https://weitingchien.github.io/Vuepress_Ting/'}],
+    ['@vuepress/last-updated',{dateOptions:{ hour12: false}}],
+    ['@vuepress/pwa',{serviceWorker: true, updatePopup: true}],
 ],
 
     themeConfig: {
