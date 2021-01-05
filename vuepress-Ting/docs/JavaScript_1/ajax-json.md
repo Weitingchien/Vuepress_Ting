@@ -76,7 +76,10 @@ xhr.onload = function () {
   - 404-資料讀取錯誤
     - 其他狀態碼可至[MDN](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Status)查看
 
-缺點:寫法複雜，會有回呼地獄(Callback Hell)的問題
+::: danger
+<p />
+<p>缺點:寫法複雜，會有回呼地獄(Callback Hell)的問題</p>
+:::
 
 ## 使用其他框架來非同步傳輸
 

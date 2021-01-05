@@ -27,7 +27,9 @@ module.exports = {
         publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
         modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }}],
-    ['sitemap',{hostname: 'https://weitingchien.github.io/Vuepress_Ting/'}]
+    ['sitemap',{ hostname: 'https://weitingchien.github.io/Vuepress_Ting/' }],
+    ['@vuepress/last-updated',{ dateOptions:{ hour12: false} }],
+    ['@vuepress/pwa',{ serviceWorker: true, updatePopup: true }],
 ],
 
     themeConfig: {

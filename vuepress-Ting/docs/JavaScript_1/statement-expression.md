@@ -7,8 +7,11 @@ tags:
 
 ## 定義
 
-陳述式(Statement):不會回傳結果<br/>
-表達式(Expression):會回傳結果
+:::tip
+<p />
+<p style="font-size:'bold';">陳述式(Statement):不會回傳結果</p>
+<p>表達式(Expression):會回傳結果</p>
+:::
 
 ## 陳述式(Statement)
 
