@@ -26,7 +26,9 @@ module.exports = {
         image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http') || '') + $page.frontmatter.image),
         publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
         modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
-    }}]],
+    }}],
+    ['sitemap',{hostname: 'https://weitingchien.github.io/Vuepress_Ting/'}]
+],
 
     themeConfig: {
         nav:[//navbar按鈕
@@ -65,8 +67,5 @@ module.exports = {
                 ]
             }
         ],
-        sitemap: {
-            hostname: 'https://weitingchien.github.io/Vuepress_Ting/',
-        },
     },
 }
