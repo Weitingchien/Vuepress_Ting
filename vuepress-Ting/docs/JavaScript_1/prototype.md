@@ -60,7 +60,7 @@ console.log(John, Dorayaki.prototype === John.__proto__);
 
 ![Prototype02](https://i.imgur.com/JFqIuTd.png)
 
-## 原始型別的包裹物件與原形的關聯
+## 原始型別的包裹物件(Primitive Wrapper)與原型的關聯
 
 待更新...
 
