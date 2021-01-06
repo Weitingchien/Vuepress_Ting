@@ -6,6 +6,11 @@
         "src": "/assets/img/vuemanifestlogo.png",
         "sizes": "512x512",
         "type": "image/png"
+      },
+      {
+        "src": "/assets/img/vuemanifestlogosecond.png",
+        "sizes": "512x512",
+        "type": "image/png"
       }
     ],
     "start_url": "/index.html",
