@@ -24,7 +24,16 @@ num.forEach((item, index) => {//forEach屬於陣列原型的屬性
 
 ![Prototype01](https://i.imgur.com/4WcM0ji.png)
 
-## 使用建構式自定義原型
+## 使用建構式(Constructor)自定義原型
+
+::: danger
+
+<p />
+<p>使用__proto__是指向一整個原型，並且可以在任何一個原形下使用。</p>
+<p>但是使用這個方法容易發生汙染，也不清楚該方法是屬於哪個功能底下，因次開發上通常使用prototype。</p>
+<p>(#prototype只存在於function，所以不能對單一物件增加prototype)</p>
+
+:::
 
 ```javascript
 
@@ -37,7 +46,7 @@ Dorayaki.prototype.List = function() {//在Dorayaki新增原型的方法
   console.log(`口味:${this.flavors} 數量:${this.amount}`);
 }
 
-const John = new Dorayaki('red bean', 3);//使用new運算子建立一個新的物件，並且連結原本的建構物件(Dorayaki)
+const John = new Dorayaki('red bean', 3);//使用new運算子建立一個新的物件(John實體)，並且連結原本的建構物件(Dorayaki)
 const Kevin = new Dorayaki('Hokkaido Milk', 5);
 
 John.List();
@@ -50,6 +59,8 @@ console.log(John, Dorayaki.prototype === John.__proto__);
 ```
 
 ![Prototype02](https://i.imgur.com/JFqIuTd.png)
+
+## 原始型別的包裹物件與原形的關聯
 
 待更新...
 
