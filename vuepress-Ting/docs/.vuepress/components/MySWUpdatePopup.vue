@@ -32,4 +32,8 @@ export default {
 .my-sw-update-popup button {
   border: 1px solid #fefefe;
 }
+
+.my-sw-update-popup button:hover {
+  border: 1px solid #3eaf7c;
+}
 </style>
