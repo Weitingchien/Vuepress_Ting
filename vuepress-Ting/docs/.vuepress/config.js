@@ -30,7 +30,10 @@ module.exports = {
     }}],
     ['sitemap',{hostname: 'https://weitingchien.github.io/Vuepress_Ting/'}],
     ['@vuepress/last-updated',{dateOptions:{ hour12: false}}],
-    ['@vuepress/pwa',{serviceWorker: true, updatePopup: {
+    ['@vuepress/pwa',{
+        serviceWorker: true,
+        popupComponent: 'MySWUpdatePopup',
+        updatePopup: {
         message: "New content is available.",
         buttonText: "Refresh"
     }}],
