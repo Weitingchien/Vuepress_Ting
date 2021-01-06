@@ -4,13 +4,13 @@ module.exports = {
     base:'/Vuepress_Ting/',//github儲存庫名稱
     head: [
         ['link', { rel: 'manifest', href: '/manifest.json' }],
-        ['link', { rel: 'icon', href: '/vuejs-logo.png' }],
+        ['link', { rel: 'icon', href: '/public/assets/img/vuejs-logo.png' }],
         ['meta', { name: 'theme-color', content: '#3eaf7c' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-        ['link', { rel: 'apple-touch-icon', href: '/public/vuejsappletouch.png' }],
-        ['link', { rel: 'mask-icon', href: '/public/vuejsappleicon.png', color: '#3eaf7c' }],
-        ['meta', { name: 'msapplication-TileImage', content: '/public/vuejsappleicon.png' }],
+        ['link', { rel: 'apple-touch-icon', href: '/public/assets/img/vuejsappletouch.png' }],
+        ['link', { rel: 'mask-icon', href: '/public/assets/img/vuejsappleicon.png', color: '#3eaf7c' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/public/assets/img/vuejsappleicon.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         ['meta', { name: 'google-site-verification', content: 'VKqM8Btzdv1WdFMEtWbBzuL_5CEDC5O5YfaUajv8IYE'}],
     ],
