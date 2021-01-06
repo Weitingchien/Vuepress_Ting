@@ -4,13 +4,14 @@ module.exports = {
     base:'/Vuepress_Ting/',//github儲存庫名稱
     head: [
         ['link', { rel: 'icon', href: '/public/assets/img/logo.png' }],
+        ['link', { rel: "shortcut icon", href: "/public/assets/img/favicon.ico"}],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
         ['meta', { name: 'theme-color', content: '#3eaf7c' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-        ['link', { rel: 'apple-touch-icon', href: '/public/assets/img/vuejsappletouch.png' }],
-        ['link', { rel: 'mask-icon', href: '/public/assets/img/vuejsappleicon.png', color: '#3eaf7c' }],
-        ['meta', { name: 'msapplication-TileImage', content: '/public/assets/img/vuejsappleicon.png' }],
+        ['link', { rel: 'apple-touch-icon', href: '/public/assets/img/apple-icon-152x152.png' }],
+        ['link', { rel: 'mask-icon', href: '/public/assets/img/VueJSIcon.svg', color: '#3eaf7c' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/public/assets/img/ms-icon-144x144.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         ['meta', { name: 'google-site-verification', content: 'VKqM8Btzdv1WdFMEtWbBzuL_5CEDC5O5YfaUajv8IYE'}],
     ],
