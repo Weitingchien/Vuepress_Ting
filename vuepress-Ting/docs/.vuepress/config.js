@@ -3,6 +3,7 @@ module.exports = {
     description: 'Vue.js、JavaScript、Note',
     base:'/Vuepress_Ting/',//github儲存庫名稱
     head: [
+        ['link', { rel: 'manifest', href: '/manifest.json' }],
         ['link', { rel: 'icon', href: '/vuejs-logo.png' }],
         ['meta', { name: 'theme-color', content: '#3eaf7c' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
@@ -29,7 +30,10 @@ module.exports = {
     }}],
     ['sitemap',{hostname: 'https://weitingchien.github.io/Vuepress_Ting/'}],
     ['@vuepress/last-updated',{dateOptions:{ hour12: false}}],
-    ['@vuepress/pwa',{serviceWorker: true, updatePopup: true}],
+    ['@vuepress/pwa',{serviceWorker: true, updatePopup: {
+        message: "New content is available.",
+        buttonText: "Refresh"
+    }}],
 ],
 
     themeConfig: {
