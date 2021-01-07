@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https:/weitingchien.github.io/Vuepress_Ting/dist/sitemap.xml
+Host: https://weitingchien.github.io
