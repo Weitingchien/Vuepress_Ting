@@ -3,12 +3,12 @@
     "short_name": "Ting",
     "icons": [
       {
-        "src": "/assets/img/vuemanifestlogo.png",
+        "src": "assets/img/vuemanifestlogo.png",
         "sizes": "512x512",
         "type": "image/png"
       },
       {
-        "src": "/assets/img/vuemanifestlogosecond.png",
+        "src": "assets/img/vuemanifestlogosecond.png",
         "sizes": "192x192",
         "type": "image/png"
       }
