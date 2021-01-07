@@ -38,6 +38,13 @@ module.exports = {
         message: "New content is available.",
         buttonText: "Refresh"
     }}],
+    [{'robots': { 
+            host: "https://weitingchien.github.io/Vuepress_Ting/",
+            disallowAll: false, 
+            sitemap: "dist/sitemap.xml",
+        }
+      }
+    ],
 ],
 
     themeConfig: {
