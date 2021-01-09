@@ -62,6 +62,13 @@ console.log(John, Dorayaki.prototype === John.__proto__);
 
 ## 原始型別的包裹物件(Primitive Wrapper)與原型的關聯
 
+```javascript
+
+let name = 'JOHN';
+console.log(name.toLowerCase());
+
+```
+
 待更新...
 
 參考文獻:<br/>
