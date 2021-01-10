@@ -69,6 +69,11 @@ console.log(name.toLowerCase());
 
 ```
 
+![Prototype03](https://i.imgur.com/1c6txaY.png)
+
+
+- 透過物件建構器把name包成String的物件，如此便可有屬性及方法呼叫
+
 待更新...
 
 參考文獻:<br/>
