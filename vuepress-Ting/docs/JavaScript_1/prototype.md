@@ -71,8 +71,16 @@ console.log(name.toLowerCase());
 
 ![Prototype03](https://i.imgur.com/1c6txaY.png)
 
-
 - 透過物件建構器把name包成String的物件，如此便可有屬性及方法呼叫
+
+```javascript
+
+let name = new String('JOHN');
+console.dir(String);//dir可查看物件的屬性
+
+```
+
+![Prototype04](https://i.imgur.com/YY0JYwY.png)
 
 待更新...
 
