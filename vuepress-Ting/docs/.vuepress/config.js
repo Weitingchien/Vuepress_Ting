@@ -30,7 +30,12 @@ module.exports = {
         modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }}],
     ['sitemap',{hostname: 'https://weitingchien.github.io/Vuepress_Ting'}],
-    ['@vuepress/last-updated',{dateOptions:{ hour12: false}}],
+    ['@vuepress/last-updated',{
+        transformer: (timestamp, lang) => {
+            const moment = require("moment");
+            moment.locale(lang);
+            return moment(timestamp).format("YYYY-MM-DD HH:mm");
+        }}],//dateOptions:{ hour12: false}
     ['@vuepress/pwa',{
         serviceWorker: true,
         popupComponent: 'MySWUpdatePopup',
