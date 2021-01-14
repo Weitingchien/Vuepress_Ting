@@ -90,6 +90,9 @@ let date = new Date();//他是一個建構式也是一個函式
 console.dir(date);//裡面有各種方法用來取得各式各樣的日期格式
 
 ```
+
+![Prototype04](https://i.imgur.com/cDsssQW.png)
+
 待更新...
 
 參考文獻:<br/>
