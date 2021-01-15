@@ -93,6 +93,23 @@ console.dir(date);//裡面有各種方法用來取得各式各樣的日期格式
 
 ![Prototype04](https://i.imgur.com/cDsssQW.png)
 
+## 使用Object.create()建立物件
+
+```javascript
+
+const library = {
+  t01: 'JavaScript',
+  t02: 'CSS',
+  t03: 'Node.js',
+  displayAll: function(){
+    console.log(this.t03);
+  }
+}
+let book = Object.create(library);
+console.log(ting);
+
+```
+
 待更新...
 
 參考文獻:<br/>
