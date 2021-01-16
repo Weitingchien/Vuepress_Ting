@@ -30,7 +30,7 @@ num.forEach((item, index) => {//forEach屬於陣列原型的屬性
 
 <p />
 <p>使用__proto__是指向一整個原型，並且可以在任何一個原形下使用。</p>
-<p>但是使用這個方法容易發生汙染，也不清楚該方法是屬於哪個功能底下，因次開發上通常使用prototype。</p>
+<p>但是使用這個方法容易發生汙染，也不清楚該方法是屬於哪個功能底下，因此開發上通常使用prototype。</p>
 <p>(#prototype只存在於function，所以不能對單一物件增加prototype)</p>
 
 :::

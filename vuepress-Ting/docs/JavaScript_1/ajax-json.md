@@ -27,7 +27,7 @@ xhr.send(null); //因為我們只要get資料，所以傳送空值(null)
 
 xhr.onload = function () {
   //onload為資料載入完成時，才執行function
-  const str = JSON.parse(xhr.responseText); //把字串轉為陣列，另外JSON.stringify()是把陣列轉為字串
+  const str = JSON.parse(xhr.responseText); //把JSON變為物件，另外JSON.stringify()是把物件變為JSON
   const main = document.querySelector('.culture');
   let str2 = ''; //建一個空字串
   for (let i = 0; i < 100; i++) {
