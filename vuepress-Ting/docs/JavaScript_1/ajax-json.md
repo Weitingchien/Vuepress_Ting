@@ -292,6 +292,7 @@ Promise.race([//只會回傳第一個完成的結果，且在第一個被拒絕�
       }, time);
     });
   }
+  
 //使用async await簡化.then() & .catch()取得回傳結果的過程
 async function getOpendata() {
   const result = await Promise.all([prFn(1, 500),prFn(2, 1000),prFn(3, 2000)]);
