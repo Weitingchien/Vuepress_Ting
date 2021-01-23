@@ -91,7 +91,7 @@ console.dir(date);//裡面有各種方法用來取得各式各樣的日期格式
 
 ```
 
-![Prototype04](https://i.imgur.com/cDsssQW.png)
+![Prototype05](https://i.imgur.com/cDsssQW.png)
 
 ## 使用Object.create()建立物件
 
@@ -110,6 +110,7 @@ console.log(ting);
 
 ```
 
+![Prototype06](https://i.imgur.com/2ZelKYk.png)
 待更新...
 
 參考文獻:<br/>
