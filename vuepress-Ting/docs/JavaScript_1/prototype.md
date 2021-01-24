@@ -102,15 +102,16 @@ const library = {
   t02: 'CSS',
   t03: 'Node.js',
   displayAll: function(){
-    console.log(this.t03);
+    return library.t03;
   }
 }
 let book = Object.create(library);
-console.log(ting);
+console.log(book, book.displayAll());
 
 ```
+- 此book會繼承library的物件特性，所以可以使用displayAll的方法
 
-![Prototype06](https://i.imgur.com/2ZelKYk.png)
+![Prototype06](https://i.imgur.com/lt4T1ns.png)
 待更新...
 
 參考文獻:<br/>
