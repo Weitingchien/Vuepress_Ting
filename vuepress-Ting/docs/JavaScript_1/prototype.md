@@ -107,11 +107,24 @@ const library = {
 }
 let book = Object.create(library);
 console.log(book, book.displayAll());
+console.log(Object.getOwnPropertyDescriptor(library, 't01'));
 
 ```
-- 此book會繼承library的物件特性，所以可以使用displayAll的方法
+- 此book會繼承原型物件library的物件特性，所以可以使用displayAll的方法
 
-![Prototype06](https://i.imgur.com/lt4T1ns.png)
+- 另外object.create()的第二個參數是屬性描述器(Property descriptor)，透過Object的getOwnPropertyDescriptor方法可以看到以下內容
+
+- value為屬性的值、writable:屬性是否可以被更改、enumerable:是否可列舉、configurable:是否可刪除屬性、如果為false，更改writable、enumerable、configurable、set、get的值會出現錯誤。
+
+::: danger
+
+- 關於是否可列舉受影響的語法:for...in、Object.keys()、JSON.stringify()
+
+:::
+
+
+![Prototype06](https://i.imgur.com/2z1gon0.png)
+
 待更新...
 
 參考文獻:<br/>

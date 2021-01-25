@@ -350,8 +350,6 @@ num(4);
 
 ![Function_currying-01](https://i.imgur.com/lUjKjQ8.png)
 
-待更新...
-
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")<br/>
