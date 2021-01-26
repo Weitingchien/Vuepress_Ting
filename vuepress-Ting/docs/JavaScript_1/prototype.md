@@ -120,6 +120,8 @@ console.log(Object.getOwnPropertyDescriptor(library, 't01'));
 
 - 關於是否可列舉受影響的語法:for...in、Object.keys()、JSON.stringify()
 
+- Object.create(null, {...})建立的物件，不會有Object原生的屬性與方法
+
 :::
 
 
