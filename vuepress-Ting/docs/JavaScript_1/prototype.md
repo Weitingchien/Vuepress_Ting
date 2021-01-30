@@ -144,6 +144,9 @@ console.log(Kevin);
 
 ![Prototype07](https://i.imgur.com/s35nfVr.png)
 
+
+## class(ES6)
+
 待更新...
 
 參考文獻:<br/>
