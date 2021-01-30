@@ -144,8 +144,43 @@ console.log(Kevin);
 
 ![Prototype07](https://i.imgur.com/s35nfVr.png)
 
-
 ## class(ES6)
+
+- 使用class這個語法糖來簡化原來的建構函式。
+
+- 使用extends讓子類別(horse)繼承父類別(herbivore)定義的屬性與方法。
+
+- 使用super()把子類別在constructor的屬性傳給父類別，如果子類別只有定義方法就不需要使用super()。
+
+
+```javascript
+
+class herbivore{
+  constructor(type){
+    this.type = type;
+  }
+  introduce(){
+    console.log(`我叫${this.name}`);
+  }
+}
+
+class horse extends herbivore{
+  constructor(name, color){
+    const type = '草食性';
+    super(type);
+    this.name = name;
+    this.color = color;
+  }
+}
+
+const Kevin = new horse('Kevin' , '棕色');
+Kevin.introduce();
+
+console.log(Kevin);
+
+```
+
+![Prototype08](https://i.imgur.com/Ildon1K.png)
 
 待更新...
 
