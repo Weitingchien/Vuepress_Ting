@@ -182,6 +182,8 @@ console.log(Kevin);
 
 ![Prototype08](https://i.imgur.com/Ildon1K.png)
 
+## class的靜態方法(static)
+
 待更新...
 
 參考文獻:<br/>
