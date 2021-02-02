@@ -184,6 +184,36 @@ console.log(Kevin);
 
 ## class的靜態方法(static)
 
+- 使用static，建立新的物件(Kevin)就不能繼承到此方法。
+
+```javascript
+class herbivore{
+  constructor(type){
+    this.type = type;
+  }
+  static introduce(){
+    console.log(`我叫${this.name}`);
+  }
+}
+
+class horse extends herbivore{
+  constructor(name, color){
+    const type = '草食性';
+    super(type);//用super呼叫指定的class
+    this.name = name;
+    this.color = color;
+  }
+}
+
+const Kevin = new horse('Kevin' , '棕色');
+Kevin.introduce();
+
+console.log(Kevin);
+
+```
+
+![Prototype09](https://i.imgur.com/mUxGwms.png)
+
 待更新...
 
 參考文獻:<br/>
