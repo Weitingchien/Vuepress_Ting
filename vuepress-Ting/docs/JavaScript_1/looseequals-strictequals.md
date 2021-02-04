@@ -4,7 +4,12 @@ date: 2020-09-17
 tags:
   - JavaScript
 ---
+::: danger
 
+<p />
+<p>===不會自動轉型，但==會</p>
+
+:::
 ### 嚴格相等(strict equals)
 
 ```javascript
