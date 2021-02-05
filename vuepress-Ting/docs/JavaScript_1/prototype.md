@@ -214,8 +214,6 @@ console.log(Kevin);
 
 ![Prototype09](https://i.imgur.com/mUxGwms.png)
 
-待更新...
-
 參考文獻:<br/>
 
 ![JavaScript](https://i.imgur.com/SyxELUw.jpg)<br/>

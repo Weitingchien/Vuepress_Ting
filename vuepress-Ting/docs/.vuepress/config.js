@@ -78,6 +78,7 @@ module.exports = {
                     '/JavaScript_1/ajax-json.md',
                     '/JavaScript_1/function.md',
                     '/JavaScript_1/prototype.md',
+                    '/JavaScript_1/object-defineproperty.md',
                 ]
             },
             {
