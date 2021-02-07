@@ -92,6 +92,12 @@ console.log(grade);
 
 ```
 
+##  Getter與Setter
+
+```javascript
+
+```
+
 ![Object.defineProperty04](https://i.imgur.com/b3GZiXt.png)
 
 參考文獻:<br/>
