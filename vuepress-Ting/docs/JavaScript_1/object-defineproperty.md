@@ -92,13 +92,34 @@ console.log(grade);
 
 ```
 
+![Object.defineProperty04](https://i.imgur.com/b3GZiXt.png)
+
+
 ##  Getter與Setter
+
+getter是讀取屬性時的行為，setter是對屬性重新賦值的行為。
 
 ```javascript
 
+const color = {
+  one: 'blue',
+  two: 'green',
+  three: 'red',
+  set changeColor(c){
+    this.one = c;
+  },
+  get changeColor(){
+    return `${this.one} + ${this.two}`;
+  }
+};
+
+color.changeColor = 'purple';
+
+console.log(color, color.changeColor);
+
 ```
 
-![Object.defineProperty04](https://i.imgur.com/b3GZiXt.png)
+![Object.defineProperty05](https://i.imgur.com/7DCVeMY.png)
 
 參考文獻:<br/>
 
