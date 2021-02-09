@@ -106,9 +106,11 @@ const color = {
   two: 'green',
   three: 'red',
   set changeColor(c){
+    console.log(`setter`);
     this.one = c;
   },
   get changeColor(){
+    console.log(`getter`);
     return `${this.one} + ${this.two}`;
   }
 };
@@ -119,7 +121,7 @@ console.log(color, color.changeColor);
 
 ```
 
-![Object.defineProperty05](https://i.imgur.com/7DCVeMY.png)
+![Object.defineProperty05](https://i.imgur.com/pkM2bFo.png)
 
 參考文獻:<br/>
 
