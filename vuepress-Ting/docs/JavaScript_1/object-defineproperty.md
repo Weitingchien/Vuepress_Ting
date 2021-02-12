@@ -123,6 +123,8 @@ console.log(color, color.changeColor);
 
 ![Object.defineProperty05](https://i.imgur.com/pkM2bFo.png)
 
+##  for in 與 for of
+
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html 'Title')<br/>
