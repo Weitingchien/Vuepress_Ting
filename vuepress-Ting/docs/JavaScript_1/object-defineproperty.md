@@ -125,6 +125,17 @@ console.log(color, color.changeColor);
 
 ##  for in 與 for of
 
+```javascript
+const wallet = {
+  John: 1000,
+  Kevin: 500
+};
+
+for(let i in wallet){
+  console.log(i);
+}
+```
+
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html 'Title')<br/>
