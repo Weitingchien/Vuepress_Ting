@@ -136,6 +136,8 @@ for(let i in wallet){
 }
 ```
 
+![Object.defineProperty06](https://i.imgur.com/eHxWMvl.png)
+
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html 'Title')<br/>
