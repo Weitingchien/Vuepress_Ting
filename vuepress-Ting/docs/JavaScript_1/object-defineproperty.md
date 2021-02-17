@@ -125,13 +125,30 @@ console.log(color, color.changeColor);
 
 ##  for in 與 for of
 
+迭代物件屬性使用for...in
+迭代陣列使用for...of
 ```javascript
+//for...in
 const wallet = {
   John: 1000,
   Kevin: 500
 };
 
 for(let i in wallet){
+  console.log(i);
+}
+
+//for...of
+const books = [
+  {
+    John: 'JavaScript',
+  },
+  {
+    Kevin: 'Node.js'
+  }
+];
+
+for(let i of books){
   console.log(i);
 }
 ```
