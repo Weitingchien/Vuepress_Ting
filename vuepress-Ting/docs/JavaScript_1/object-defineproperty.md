@@ -153,7 +153,7 @@ for(let i of books){
 }
 ```
 
-![Object.defineProperty06](https://i.imgur.com/eHxWMvl.png)
+![Object.defineProperty06](https://i.imgur.com/d5yQoSv.png)
 
 參考文獻:<br/>
 
