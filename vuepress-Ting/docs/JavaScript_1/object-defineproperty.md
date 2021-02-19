@@ -125,8 +125,8 @@ console.log(color, color.changeColor);
 
 ##  for in 與 for of
 
-迭代物件屬性使用for...in
-迭代陣列使用for...of
+迭代物件屬性使用for...in，它會輸出key
+迭代陣列使用for...of，它會輸出value
 ```javascript
 //for...in
 const wallet = {
@@ -139,21 +139,14 @@ for(let i in wallet){
 }
 
 //for...of
-const books = [
-  {
-    John: 'JavaScript',
-  },
-  {
-    Kevin: 'Node.js'
-  }
-];
+const books = ['JavaScript', 'Node.js'];
 
 for(let i of books){
   console.log(i);
 }
 ```
 
-![Object.defineProperty06](https://i.imgur.com/d5yQoSv.png)
+![Object.defineProperty06](https://i.imgur.com/JIownh1.png)
 
 參考文獻:<br/>
 
