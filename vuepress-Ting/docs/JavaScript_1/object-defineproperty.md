@@ -148,6 +148,17 @@ for(let i of books){
 
 ![Object.defineProperty06](https://i.imgur.com/JIownh1.png)
 
+```javascript
+const wallet = {
+  John: 1000,
+  Kevin: 500
+};
+
+for(let i of Object.keys(wallet)){
+  console.log(`${i}:${wallet[i]}`);
+}
+```
+
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html 'Title')<br/>
