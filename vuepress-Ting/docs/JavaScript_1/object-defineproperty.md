@@ -159,6 +159,8 @@ for(let i of Object.keys(wallet)){
 }
 ```
 
+![Object.defineProperty07](https://i.imgur.com/ayZrKV2.png)
+
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html 'Title')<br/>
