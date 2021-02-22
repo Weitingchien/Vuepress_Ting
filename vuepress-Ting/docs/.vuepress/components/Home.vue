@@ -1,7 +1,7 @@
 <template>
 
 <div container>
-<p class="text-center">JavaScript & Vue.js學習筆記</p>
+<p class="text-center">JavaScript & Vue.js & Node.js學習筆記</p>
 <p class="text-center">持續更新</p>
 </div>
 
