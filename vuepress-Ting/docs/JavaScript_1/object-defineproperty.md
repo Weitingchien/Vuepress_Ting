@@ -125,8 +125,9 @@ console.log(color, color.changeColor);
 
 ##  for in 與 for of
 
-迭代物件屬性使用for...in，它會輸出key
-迭代陣列使用for...of，它會輸出value
+- 迭代物件屬性使用for...in，它會輸出key
+- 迭代陣列使用for...of，它會輸出value
+- Object.keys()取得所有屬性名稱，且它所回傳的是陣列
 ```javascript
 //for...in
 const wallet = {
@@ -149,6 +150,7 @@ for(let i of books){
 ![Object.defineProperty06](https://i.imgur.com/JIownh1.png)
 
 ```javascript
+//for...of 搭配 Object.keys()
 const wallet = {
   John: 1000,
   Kevin: 500
