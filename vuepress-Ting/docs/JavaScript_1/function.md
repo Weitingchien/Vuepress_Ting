@@ -111,6 +111,7 @@ score(70);
 
 ## 閉包(Closure)
 
+- 不斷存取外層function的變數，讓內層function的變數不會被釋放。
 ### 函式工廠(Function Factories)
 
 ```javascript
@@ -123,7 +124,7 @@ function store(num){
   }
 }
 
-let bookCost = store(1000);/*執行一次store，並且宣告cost變數參照store函式裡宣告的money變數，導致money記憶體不會被釋放*/
+let bookCost = store(1000);/*執行一次store，並且宣告bookCost變數參照store函式裡宣告的money變數，導致money記憶體不會被釋放*/
 bookCost(100);//100這個參數值是傳進內層的函式，也就是對應至price
 
 let furnitureCost = store(20000);
