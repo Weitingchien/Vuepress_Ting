@@ -113,7 +113,7 @@ score(70);
 
 - 存取外層function的變數，讓內層function的變數不會被釋放，也就是說外層的function執行完，外層function中的變數並沒有消失，而是留給內層function參照使用。
 
-- 如果每2秒就印0~10，需改成let或是IIFE的方式去存取i的值，這邊因為var宣告是function scope，但迴圈不是function，所以在setTimeout(()=>{},i*2000);取i的值是取全域下的i，也就是for迴圈跑完時的i。所以這邊才會是10，而不是0、1、2、3......10。
+- 如果每2秒就印0~9，需改成let或是IIFE的方式去存取i的值，這邊因為var宣告是function scope，但迴圈不是function，所以在setTimeout(()=>{},i*2000);取i的值是取全域下的i，也就是for迴圈跑完時的i。所以這邊才會是10，而不是0、1、2、3......10。
 
 ```javascript
 for (var i=0; i<10; i ++){
@@ -124,6 +124,16 @@ for (var i=0; i<10; i ++){
 ```
 ![Function_closure01](https://i.imgur.com/9xR7TZk.png)
 
+- let是 block scope，它會在每次迭代時重新宣告變數i。
+
+```javascript
+for (let i=0; i<10; i ++){
+  setTimeout(()=>{
+    console.log(i);
+  },i * 2000);
+}
+```
+![Function_closure02](https://i.imgur.com/FhgoTww.png)
 ### 函式工廠(Function Factories)s
 
 ```javascript
