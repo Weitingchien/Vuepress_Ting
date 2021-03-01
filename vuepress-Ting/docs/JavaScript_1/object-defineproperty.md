@@ -163,7 +163,22 @@ for(let i of Object.keys(wallet)){
 
 ![Object.defineProperty07](https://i.imgur.com/ayZrKV2.png)
 
-##  Object.value() 與 Object.create()
+##  Object.values() 與 Object.entries()
+
+- ES2017 (ES8)新增的語法
+- Object.values()是直接取得所有屬性的值，並回傳陣列。
+- Object.entries()是取得所有屬性名稱與值，並回傳陣列。
+
+```javascript
+const wallet = {
+  John: 1000,
+  Kevin: 500
+};
+
+console.log(Object.values(wallet),Object.entries(wallet));
+```
+
+![Object.defineProperty07](https://i.imgur.com/0K6Qivp.png)
 
 待更新...
 
