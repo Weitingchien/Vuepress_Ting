@@ -79,6 +79,7 @@ module.exports = {
                     '/JavaScript_1/function.md',
                     '/JavaScript_1/prototype.md',
                     '/JavaScript_1/object-defineproperty.md',
+                    '/JavaScript_1/dom.md'
                 ]
             },
             {

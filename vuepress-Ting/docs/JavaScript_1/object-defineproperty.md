@@ -180,8 +180,6 @@ console.log(Object.values(wallet),Object.entries(wallet));
 
 ![Object.defineProperty07](https://i.imgur.com/0K6Qivp.png)
 
-待更新...
-
 參考文獻:<br/>
 
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html 'Title')<br/>
