@@ -5,7 +5,7 @@ tags: ['JavaScript', 'DOM']
 ---
 
 # DOM?
-
+HTML的各個標籤，都定義成物件，且最終會形成一個樹狀結構。
 待更新...
 
 ## querySelector
