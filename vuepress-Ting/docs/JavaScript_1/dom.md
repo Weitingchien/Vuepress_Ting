@@ -1,7 +1,7 @@
 ---
-title: 文件物件模型 DOM (Document Object Model)
+title: 文件物件模型 DOM (Document Object Model) 、BOM (Browser Object Model)
 date: 2021-03-02
-tags: ['JavaScript', 'DOM']
+tags: ['JavaScript', 'DOM','BOM']
 ---
 
 # DOM?
