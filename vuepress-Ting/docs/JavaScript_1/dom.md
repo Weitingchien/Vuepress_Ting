@@ -38,6 +38,8 @@ function message(){
   console.log('Hello');
 }
 ```
+顯示:
+![DOM02](https://i.imgur.com/5Jsnk8w.png)
 
 ## querySelectorAll
 
