@@ -79,6 +79,35 @@ for(let i=0; i<btnOne.length; i++) {
 
 ## innerText、textContent
 
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test18.css">
+    <title>querySelector</title>
+</head>
+<body>
+<div class="wrap">
+    <button id="btn">One</button>
+</div>
+    <script src="/test18.js"></script>
+</body>
+</html>
+```
+
+```javascript
+//textContent
+const btnOne = document.querySelector('#btn');
+
+btnOne.addEventListener('click', message);
+
+function message(){
+  btnOne.textContent = 'Two';
+}
+```
+
 > As innerText is aware of CSS styling, it will trigger a reflow, whereas textContent will not.
 - 根據上面MDN提到，可以知道innerText所回傳的是經過CSS渲染的文字，而textContent則不是，它僅僅只有文字內容。
 
