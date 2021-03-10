@@ -111,6 +111,12 @@ function message(){
 > As innerText is aware of CSS styling, it will trigger a reflow, whereas textContent will not.
 - 根據上面MDN提到，可以知道innerText所回傳的是經過CSS渲染的文字，而textContent則不是，它僅僅只有文字內容。
 
+顯示:
+
+點擊時按鈕由原本的One變為Two
+
+![DOM03](https://i.imgur.com/dohMS8t.png)
+
 待更新...
 
 參考文獻:<br/>
