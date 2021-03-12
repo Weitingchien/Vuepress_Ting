@@ -77,7 +77,7 @@ for(let i=0; i<btnOne.length; i++) {
 顯示:
 ![DOM01](https://i.imgur.com/vbVH1hU.png)
 
-## innerText、textContent
+## textContent
 
 ``` HTML
 <!DOCTYPE html>
@@ -104,22 +104,42 @@ const btnOne = document.querySelector('#btn');
 btnOne.addEventListener('click', message);
 
 function message(){
-  btnOne.textContent = 'Two';
+  btnOne.textContent = '<h1 class="title">Two</h1>';
 }
 ```
 
-> As innerText is aware of CSS styling, it will trigger a reflow, whereas textContent will not.
-- 根據上面MDN提到，可以知道innerText所回傳的是經過CSS渲染的文字，而textContent則不是，它僅僅只有文字內容。
+顯示:
+
+點擊時按鈕由原本的One變為 ```<h1 class="title">Two</h1>```
+![DOM03](https://i.imgur.com/BKdehq1.png)
+
+## innerHTML
+
+```javascript
+//innerHTML
+const btnOne = document.querySelector('#btn');
+
+btnOne.addEventListener('click', message);
+
+function message(){
+  btnOne.innerHTML = `<h1 class="title">Two</h1>`;
+}
+```
+
+```css
+.title{
+	color: blue;
+}
+```
 
 顯示:
 
-點擊時按鈕由原本的One變為Two
+點擊時按鈕由原本的One變為藍色的Two
+![DOM04](https://i.imgur.com/3jJWvPw.png)
 
-![DOM03](https://i.imgur.com/dohMS8t.png)
 
 待更新...
 
 參考文獻:<br/>
 [JavaScript 核心篇](https://www.hexschool.com/courses/js-core.html "Title")<br/>
 [MDN-什麼是DOM?](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#what_is_the_dom "Title")<br/>
-[MDN-textContent與innertext的差異](https://developer.mozilla.org/zh-TW/docs/Web/API/Node/textContent "Title")
