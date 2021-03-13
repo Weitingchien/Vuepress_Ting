@@ -137,6 +137,11 @@ function message(){
 點擊時按鈕由原本的One變為藍色的Two
 ![DOM04](https://i.imgur.com/3jJWvPw.png)
 
+:::tip
+</p>
+innerHTML:當組完字串後，傳進語法進行渲染。優點:效能快。缺點:資安風險。
+</p>
+:::
 
 待更新...
 
