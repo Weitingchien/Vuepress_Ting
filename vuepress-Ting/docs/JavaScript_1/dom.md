@@ -139,6 +139,30 @@ function message(){
 
 ## createElement
 
+```javascript
+const link = document.createElement('h1');
+link.textContent = 'Hello';
+
+document.querySelector('.wrap').appendChild(link);
+```
+
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test18.css">
+    <title>querySelector</title>
+</head>
+<body>
+<div class="wrap">
+</div>
+    <script src="/test18.js"></script>
+</body>
+</html>
+```
+
 待更新...
 
 :::tip
