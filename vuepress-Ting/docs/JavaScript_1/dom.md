@@ -163,14 +163,15 @@ document.querySelector('.wrap').appendChild(link);
 </html>
 ```
 
-待更新...
-
-:::tip
+:::warning
 </p>
 innerHTML:當組完字串後，傳進語法進行渲染。優點:效能快。缺點:資安風險。
 createElement:以DOM節點處理。優點:安全性高。缺點:效能差。
 </p>
 :::
+
+![DOM05](https://i.imgur.com/ylhs8wJ.png)
+![DOM06](https://i.imgur.com/6N7kgj1.png)
 
 待更新...
 
