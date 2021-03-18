@@ -173,6 +173,11 @@ createElement:以DOM節點處理。優點:安全性高。缺點:效能差。
 ![DOM05](https://i.imgur.com/ylhs8wJ.png)
 ![DOM06](https://i.imgur.com/6N7kgj1.png)
 
+## 資安議題
+
+- XSS(Cross-site scripting):
+一旦頁面中有用innerHTML等語法，就有被注入JS程式碼的機會，需要對使用者所輸入的字串驗證。
+
 待更新...
 
 參考文獻:<br/>
