@@ -177,6 +177,8 @@ createElement:以DOM節點處理。優點:安全性高。缺點:效能差。
 
 - XSS(Cross-site scripting):
 一旦頁面中有用innerHTML等語法，就有被注入JS程式碼的機會，需要對使用者所輸入的字串驗證，否則惡意人士可以透過它自己寫的script，來做一些動作(例如取得後端使用者的資料等等...)。
+### 1. Stored XSS (儲存型):
+攻擊者將惡意的程式碼傳送到Server的database中，常見的就是留言板等使用者所輸入的內容，如果沒有確實的檢查就會被當成正常的JavaScript程式碼執行。
 
 待更新...
 
