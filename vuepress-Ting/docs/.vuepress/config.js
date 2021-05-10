@@ -86,7 +86,7 @@ module.exports = {
                 title:'Vue.js',
                 path:'',
                 children: [
-                    '/Vue_2/basic',
+                    '/Vue_2/v-model',
                 ]
             },
             {
