@@ -28,4 +28,3 @@ tags: ['Vue']
 * <strong>destoryed:</strong> 實體銷毀，並且沒有使用keep-alive時呼叫，所有事件監聽器與綁定移除
 
 參考文獻:<br/>
-
