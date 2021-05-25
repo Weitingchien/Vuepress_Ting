@@ -1,7 +1,7 @@
 ---
 title: v-model
 date: 2021-05-11
-tags: ['Vue',]
+tags: ['Vue']
 ---
 
 ## 雙向綁定
@@ -12,6 +12,3 @@ tags: ['Vue',]
 
 參考文獻:<br/>
 
-
-
-<Vssue  />
