@@ -136,7 +136,7 @@ module.exports = {
       {
         title: 'Vue.js',
         path: '',
-        children: ['/Vue_2/v-model', '/Vue_2/v-lifecycle']
+        children: ['/Vue_2/v-lifecycle', '/Vue_2/v-basic']
       },
       {
         title: 'Node.js',
