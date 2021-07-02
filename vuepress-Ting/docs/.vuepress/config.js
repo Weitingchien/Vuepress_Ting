@@ -142,6 +142,11 @@ module.exports = {
         title: 'Node.js',
         path: '',
         children: ['/Node/basic']
+      },
+      {
+        title: 'DataStructuresAndAlgorithm',
+        path: '',
+        children: ['/DataStructuresAndAlgorithm/array.md']
       }
     ]
   }
