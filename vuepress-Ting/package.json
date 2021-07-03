@@ -9,7 +9,7 @@
     "@vuepress/plugin-back-to-top": "^1.7.1",
     "@vuepress/plugin-google-analytics": "^1.7.1",
     "@vuepress/plugin-nprogress": "^1.7.1",
-    "@vuepress/plugin-pwa": "^1.8.0",
+    "@vuepress/plugin-pwa": "^1.8.2",
     "vuepress": "^1.7.1"
   },
   "scripts": {
@@ -20,6 +20,7 @@
     "@vssue/api-github-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "bootstrap-vue": "^2.21.2",
+    "caniuse-lite": "^1.0.30001241",
     "moment": "^2.29.1",
     "vuepress-plugin-robots": "^1.0.1",
     "vuepress-plugin-seo": "^0.1.4",

@@ -7,4 +7,26 @@ tags:
 
 ## Array
 
-使用陣列可以儲存我們的資料，而不用每一次儲存都要再宣告一個變數。
+陣列是用來儲存我們的資料，每一個就像是學校的置物櫃，人把各自的東西(元素)放到置物櫃裡，然後寫上我們的座號(索引值)
+
+![array01](https://i.imgur.com/8tRmfhL.png)
+
+## 斐波那契數列
+
+從第三個元素開始每一個元素是前兩個元素的和
+
+```javascript
+function fibonacciBuild() {
+  let fibonacci = [];
+  fibonacci[0] = 1;
+  fibonacci[1] = 1;
+  for (let i = 2; i < 10; i++) {
+    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+  }
+  console.log(fibonacci);
+}
+
+fibonacciBuild();
+```
+
+![fibonacci](https://i.imgur.com/zbvQCEO.png)
