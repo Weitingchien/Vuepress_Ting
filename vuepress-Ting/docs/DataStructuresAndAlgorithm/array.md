@@ -30,3 +30,7 @@ fibonacciBuild();
 ```
 
 ![fibonacci](https://i.imgur.com/zbvQCEO.png)
+
+## 堆疊
+
+一種遵從先進先出(LIFO)原則的有序集合，使用 push()新增元素或是 pop()移除元素，不管是新增或是刪除都是在堆疊頂部。
