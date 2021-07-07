@@ -35,7 +35,9 @@ fibonacciBuild();
 
 一種遵從後進先出(LIFO)原則的有序集合，使用 push()新增元素或是 pop()移除元素，不管是新增或是刪除都是在堆疊頂部。
 
-### 十進位轉二進位
+### 進制轉換
+
+使用堆疊的原理實作十進位轉任何進位(ex:10 進位轉 8 進位、2 進位、16 進位)
 
 ```javascript
 class Stack {
@@ -59,18 +61,19 @@ class Stack {
   }
 }
 
-function divideBy2(decimalNumber) {
+function converter(decimalNumber, base) {
+  let digits = '0123456789ABCDEF';
   let remStack = new Stack();
-  let binaryString = '';
+  let str = '';
   while (decimalNumber > 0) {
-    remStack.push(Math.floor(decimalNumber % 2));
-    decimalNumber = Math.floor(decimalNumber / 2);
+    remStack.push(Math.floor(decimalNumber % base)); //把餘數push到Stack裡的arr陣列，最後this.arr = [0,1,0,1]
+    decimalNumber = Math.floor(decimalNumber / base);
   }
   while (!remStack.isEmpty()) {
-    binaryString += remStack.pop().toString();
+    str += digits[remStack.pop()]; //使用pop()取堆疊頂部的值並累加字串
   }
-  return binaryString;
+  return str;
 }
 
-console.log(divideBy2(10));
+console.log(converter(10, 2));
 ```
