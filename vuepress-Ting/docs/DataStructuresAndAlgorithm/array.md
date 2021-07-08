@@ -34,6 +34,7 @@ fibonacciBuild();
 ## 堆疊
 
 一種遵從後進先出(LIFO)原則的有序集合，使用 push()新增元素或是 pop()移除元素，不管是新增或是刪除都是在堆疊頂部
+拿現實中的例子來比喻的話就像是一疊
 
 ### 進制轉換
 
@@ -86,6 +87,8 @@ console.log(converter(10, 2));
 
 前面在堆疊移除元素時是使用 pop()移除推疊頂部，在佇列則是使用 shift()移除佇列的第一個元素
 
+日常中有許多符合佇列的例子，像是看電影排隊時，會優先讓早到的人入場
+
 ```javascript
 class QueueItems {
   constructor(priority, element) {
@@ -107,6 +110,10 @@ class PriorityQueue {
       this.cache.push(queueItems);
     } else {
       let added = false;
+      /*如果當前的priority值小於cache裡的priority使用splice()方法插入=>當執行時i=0; i<2;i++
+          i=0時，cache = [{element: 'Alan", priority:2},{element: 'Sandy", priority:3}]
+          i=1時，cache = [{element: 'Alan", priority:2},{element: 'Sandy", priority:3}.{element: 'Tony", priority:2}]
+      */
       for (let i = 0; i < this.cache.length; i++) {
         if (queueItems.priority < this.cache[i].priority) {
           this.cache.splice(i, 0, queueItems);
@@ -114,11 +121,21 @@ class PriorityQueue {
           break;
         }
       }
+      //如果當前的priority值大於cache裡面的priority直接新增到佇列末尾
       if (!added) {
         this.cache.push(queueItems);
       }
     }
     return this.cache;
+  }
+  dequeue() {
+    return this.cache.shift();
+  }
+  front() {
+    return this.cache[0];
+  }
+  size() {
+    return this.cache.length;
   }
 }
 
