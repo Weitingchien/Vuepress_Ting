@@ -33,7 +33,7 @@ fibonacciBuild();
 
 ## 堆疊
 
-一種遵從後進先出(LIFO)原則的有序集合，使用 push()新增元素或是 pop()移除元素，不管是新增或是刪除都是在堆疊頂部。
+一種遵從後進先出(LIFO)原則的有序集合，使用 push()新增元素或是 pop()移除元素，不管是新增或是刪除都是在堆疊頂部
 
 ### 進制轉換
 
@@ -77,3 +77,55 @@ function converter(decimalNumber, base) {
 
 console.log(converter(10, 2));
 ```
+
+![Stack](https://i.imgur.com/EuHOiEA.png)
+
+## 佇列
+
+與堆疊不太一樣，是先進先出(FIFO)的原則，在佇列尾部新增元素，頂部移除元素
+
+前面在堆疊移除元素時是使用 pop()移除推疊頂部，在佇列則是使用 shift()移除佇列的第一個元素
+
+```javascript
+class QueueItems {
+  constructor(priority, element) {
+    this.priority = priority;
+    this.element = element;
+  }
+}
+
+class PriorityQueue {
+  constructor() {
+    this.cache = [];
+  }
+  isEmpty() {
+    return this.cache.length === 0;
+  }
+  enqueue(priority, element) {
+    let queueItems = new QueueItems(priority, element);
+    if (this.isEmpty()) {
+      this.cache.push(queueItems);
+    } else {
+      let added = false;
+      for (let i = 0; i < this.cache.length; i++) {
+        if (queueItems.priority < this.cache[i].priority) {
+          this.cache.splice(i, 0, queueItems);
+          added = true;
+          break;
+        }
+      }
+      if (!added) {
+        this.cache.push(queueItems);
+      }
+    }
+    return this.cache;
+  }
+}
+
+let priorityQueueInstance = new PriorityQueue();
+console.log(priorityQueueInstance.enqueue(2, 'Alan'));
+console.log(priorityQueueInstance.enqueue(3, 'Sandy'));
+console.log(priorityQueueInstance.enqueue(2, 'Tony'));
+```
+
+![Queue](https://i.imgur.com/FgOCBCn.png)
