@@ -31,7 +31,7 @@ fibonacciBuild();
 
 ![fibonacci](https://i.imgur.com/zbvQCEO.png)
 
-## 堆疊
+## 堆疊(Stack)
 
 一種遵從後進先出(LIFO)原則的有序集合，使用 push()新增元素或是 pop()移除元素，不管是新增或是刪除都是在堆疊頂部
 拿現實中的例子來比喻的話就像是一疊
@@ -81,7 +81,7 @@ console.log(converter(10, 2));
 
 ![Stack](https://i.imgur.com/EuHOiEA.png)
 
-## 佇列
+## 佇列(Queue)
 
 與堆疊不太一樣，是先進先出(FIFO)的原則，在佇列尾部新增元素，頂部移除元素
 
@@ -146,3 +146,9 @@ console.log(priorityQueueInstance.enqueue(2, 'Tony'));
 ```
 
 ![Queue](https://i.imgur.com/FgOCBCn.png)
+
+# 鏈結串列(LinkedList)
+
+鏈結串列中的元素在記憶中不是連續放置的，每一個節點中儲存元素並且指向(指位器)下一個節點
+
+資料操作成本較傳統陣列低
