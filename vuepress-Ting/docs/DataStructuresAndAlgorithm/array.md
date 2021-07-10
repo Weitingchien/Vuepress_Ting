@@ -9,6 +9,8 @@ tags:
 
 陣列是用來儲存我們的資料，每一個就像是學校的置物櫃，人把各自的東西(元素)放到置物櫃裡，然後寫上我們的座號(索引值)
 
+連續的記憶體空間
+
 ![array01](https://i.imgur.com/8tRmfhL.png)
 
 ## 斐波那契數列
@@ -152,3 +154,34 @@ console.log(priorityQueueInstance.enqueue(2, 'Tony'));
 鏈結串列中的元素在記憶中不是連續放置的，每一個節點中儲存元素並且指向(指位器)下一個節點
 
 資料操作成本較傳統陣列低
+
+![LinkedList](https://i.imgur.com/QRVaTgp.png)
+
+```javascript
+class Node {
+  constructor(element) {
+    this.element = element;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.length = 0;
+    this.head = null;
+  }
+  append() {
+    let node = new Node(element);
+    if (!this.head) {
+      node = this.head;
+    } else {
+      let current = this.head;
+      while (current.next !== null) {
+        current = this.next;
+      }
+      current = node;
+    }
+    this.length++;
+  }
+}
+```
