@@ -149,13 +149,19 @@ console.log(priorityQueueInstance.enqueue(2, 'Tony'));
 
 ![Queue](https://i.imgur.com/FgOCBCn.png)
 
-# 鏈結串列(LinkedList)
-
-鏈結串列中的元素在記憶中不是連續放置的，每一個節點中儲存元素並且指向(指位器)下一個節點
+## 鏈結串列(LinkedList)
 
 資料操作成本較傳統陣列低
 
-![LinkedList](https://i.imgur.com/QRVaTgp.png)
+鏈結串列中的元素在記憶中不是連續放置的，每一個節點中包含元素並且指向(指位器)下一個節點
+
+要存取第 n 個元素時( 時間複雜度為 O(n) )，Array 則是可以透過索引值直接存取元素( 時間複雜度為 O(1) )
+
+### 實作 append(element)、toString()方法
+
+像 LinkedList 尾部添加元素，一開始的 head 為 null，要讓他指向到第一個 節點
+
+![LinkedList01](https://i.imgur.com/dsU9BM4.png)
 
 ```javascript
 class Node {
@@ -170,18 +176,43 @@ class LinkedList {
     this.length = 0;
     this.head = null;
   }
-  append() {
+  append(element) {
     let node = new Node(element);
-    if (!this.head) {
-      node = this.head;
+    let result = 'head >';
+    if (this.head === null) {
+      this.head = node;
     } else {
       let current = this.head;
       while (current.next !== null) {
-        current = this.next;
+        current = current.next;
       }
-      current = node;
+      current.next = node;
     }
     this.length++;
   }
+  toString() {
+    let current = this.head;
+    console.log(current);
+    let str = 'head-';
+    while (current !== null) {
+      str += `${current.element}-`;
+      current = current.next;
+    }
+    return `${str}null`;
+  }
 }
+
+let n1 = new LinkedList();
+n1.append(1);
+n1.append(2);
+n1.append(3);
+console.log(n1.toString());
 ```
+
+呼叫 toString()
+
+![LinkedList03](https://i.imgur.com/RYBqGmE.png)
+
+添加節點後的示意圖
+
+![LinkedList02](https://i.imgur.com/IHscmfu.png)
