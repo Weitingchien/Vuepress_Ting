@@ -213,6 +213,41 @@ console.log(n1.toString());
 
 ![LinkedList03](https://i.imgur.com/RYBqGmE.png)
 
-添加節點後的示意圖
+添加節點後:
 
 ![LinkedList02](https://i.imgur.com/IHscmfu.png)
+
+### 實作 removeAt(position)方法
+
+移除特定位置的元素
+
+```javascript
+	removeAt(position){
+	  if(position > -1 && position < this.size()){
+		  let current = this.head;
+			//移除首項
+			if(position === 0){
+			  this.head = current.next;
+			} else{
+			  let index = 0;
+			  let previous;
+				//移除中間項或是最後一項要使用迴圈迭代串列
+			  while(position !== index){
+				  index++;
+				  previous = current;
+				  current = current.next;
+				}
+				//跳過current
+				previous.next = current.next;
+			}
+			this.length--;
+			return current.element;
+		} else{
+		  return null;
+		}
+	}
+```
+
+移除首項:
+
+![LinkedList04](https://i.imgur.com/B6wKJdd.png)
