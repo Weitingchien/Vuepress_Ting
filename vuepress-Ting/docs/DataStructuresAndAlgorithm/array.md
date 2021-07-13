@@ -176,6 +176,9 @@ class LinkedList {
     this.length = 0;
     this.head = null;
   }
+  size() {
+    return this.length;
+  }
   append(element) {
     let node = new Node(element);
     let result = 'head >';
@@ -248,6 +251,10 @@ console.log(n1.toString());
 	}
 ```
 
-移除首項:
+移除首項(position = 0):
 
 ![LinkedList04](https://i.imgur.com/B6wKJdd.png)
+
+移除第二項(position = 1):
+
+![LinkedList05](https://i.imgur.com/gsgGKSO.png)
