@@ -222,7 +222,7 @@ console.log(n1.toString());
 
 ### 實作 removeAt(position)方法
 
-移除特定位置的元素
+移除任一位置的元素
 
 ```javascript
 	removeAt(position){
@@ -253,8 +253,43 @@ console.log(n1.toString());
 
 移除首項(position = 0):
 
-![LinkedList04](https://i.imgur.com/B6wKJdd.png)
+![LinkedList04](https://i.imgur.com/ybYcETn.png)
 
 移除第二項(position = 1):
 
 ![LinkedList05](https://i.imgur.com/gsgGKSO.png)
+
+### 實作 insert(position, element)方法
+
+在任一位置插入元素
+
+```javascript
+	insert(position, element){
+		 if(position > -1 && position <= this.size()){
+		   	   let node = new Node(element);
+					 let current = this.head;
+		   if(position === 0){
+			   this.head = node;
+				 node.next = current;
+			 } else {
+			   let index = 0;
+				 let previous;
+				 while(position !== index){
+				   index++
+				   previous = current;
+					 current = current.next;
+				 }
+				 previous.next = node;
+				 node.next = current;
+			 }
+			 this.length ++;
+			 return true;
+		 } else {
+		   return false;
+		 }
+	}
+```
+
+假設 insert(2, 2.5):
+
+![LinkedList06](https://i.imgur.com/KSb9kxb.png)
