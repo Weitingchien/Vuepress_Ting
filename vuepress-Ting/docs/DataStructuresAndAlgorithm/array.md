@@ -293,3 +293,7 @@ console.log(n1.toString());
 假設 insert(2, 2.5):
 
 ![LinkedList06](https://i.imgur.com/KSb9kxb.png)
+
+假設 insert(0, 2.5):
+
+![LinkedList07](https://i.imgur.com/JM9Vfvl.png)
