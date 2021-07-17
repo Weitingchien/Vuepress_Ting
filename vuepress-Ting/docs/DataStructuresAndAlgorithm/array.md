@@ -151,15 +151,19 @@ console.log(priorityQueueInstance.enqueue(2, 'Tony'));
 
 ## 鏈結串列(LinkedList)
 
-資料操作成本較傳統陣列低
+資料操作成本較傳統陣列低，適合頻繁的新增與移除資料，但不適合用來查詢
 
 鏈結串列中的元素在記憶中不是連續放置的，每一個節點中包含元素並且指向(指位器)下一個節點
 
 要存取第 n 個元素時( 時間複雜度為 O(n) )，Array 則是可以透過索引值直接存取元素( 時間複雜度為 O(1) )
 
+### Result:
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/4tk3gLu8/416/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 ### 實作 append(element)、toString()方法
 
-像 LinkedList 尾部添加元素，一開始的 head 為 null，要讓他指向到第一個 節點
+像串列尾部添加元素，一開始的 head 為 null，要讓他指向到第一個 節點
 
 ![LinkedList01](https://i.imgur.com/dsU9BM4.png)
 
@@ -246,7 +250,7 @@ console.log(n1.toString());
 			this.length--;
 			return current.element;
 		} else{
-		  return null;
+		  return false;
 		}
 	}
 ```
@@ -297,3 +301,27 @@ console.log(n1.toString());
 假設 insert(0, 2.5):
 
 ![LinkedList07](https://i.imgur.com/JM9Vfvl.png)
+
+### 實作 indexOf(element)、remove(element)、getHead()方法
+
+```javascript
+	indexOf(element){
+	  let index = 0;
+	  let current = this.head;
+		while(current !== null){
+		  if(element === current.element){
+			  return index;
+			}
+			index++;
+			current = current.next;
+		}
+		return -1;
+	}
+	remove(element){
+	  let index = this.indexOf(element);
+		return this.removeAt(index);
+	}
+  getHead(){
+    return this.head;
+  }
+```

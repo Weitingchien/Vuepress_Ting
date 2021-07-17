@@ -1,3 +1,6 @@
+require('dotenv').config();
+const webpack = require('webpack');
+
 module.exports = {
   title: 'Ting',
   description: 'Vue.js、JavaScript、Note',
@@ -148,6 +151,13 @@ module.exports = {
         path: '',
         children: ['/DataStructuresAndAlgorithm/array.md']
       }
-    ]
+    ],
+    algolia: {
+      apiKey: 'ff71407cebded723c9f951fb6852a3e9',
+      indexName: 'prod_Ting'
+    }
+  },
+  configureWebpack: config => {
+    return { plugins: [new webpack.EnvironmentPlugin({ ...process.env })] };
   }
 };
