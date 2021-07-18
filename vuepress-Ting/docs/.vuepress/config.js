@@ -149,13 +149,13 @@ module.exports = {
       {
         title: 'DataStructuresAndAlgorithm',
         path: '',
-        children: ['/DataStructuresAndAlgorithm/array.md']
+        children: [
+          '/DataStructuresAndAlgorithm/array.md',
+          '/DataStructuresAndAlgorithm/linkedlist.md',
+          '/DataStructuresAndAlgorithm/set.md'
+        ]
       }
-    ],
-    algolia: {
-      apiKey: 'ff71407cebded723c9f951fb6852a3e9',
-      indexName: 'prod_Ting'
-    }
+    ]
   },
   configureWebpack: config => {
     return { plugins: [new webpack.EnvironmentPlugin({ ...process.env })] };
