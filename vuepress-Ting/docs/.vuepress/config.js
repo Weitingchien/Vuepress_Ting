@@ -152,7 +152,8 @@ module.exports = {
         children: [
           '/DataStructuresAndAlgorithm/array.md',
           '/DataStructuresAndAlgorithm/linkedlist.md',
-          '/DataStructuresAndAlgorithm/set.md'
+          '/DataStructuresAndAlgorithm/set.md',
+          '/DataStructuresAndAlgorithm/dictionary.md'
         ]
       }
     ]
