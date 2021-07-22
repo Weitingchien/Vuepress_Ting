@@ -153,7 +153,8 @@ module.exports = {
           '/DataStructuresAndAlgorithm/array.md',
           '/DataStructuresAndAlgorithm/linkedlist.md',
           '/DataStructuresAndAlgorithm/set.md',
-          '/DataStructuresAndAlgorithm/dictionary.md'
+          '/DataStructuresAndAlgorithm/dictionary.md',
+          '/DataStructuresAndAlgorithm/hashtable.md'
         ]
       }
     ]

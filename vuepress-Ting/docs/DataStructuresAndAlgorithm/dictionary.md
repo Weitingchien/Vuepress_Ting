@@ -5,7 +5,7 @@ tags:
   - DataStructuresAndAlgorithm
 ---
 
-## dictionary
+## 字典(dictionary)
 
 字典與集合不同的地方在於它是鍵值對，以下是基於 JavaScript Map 類別的實作
 

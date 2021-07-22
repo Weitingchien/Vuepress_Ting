@@ -5,7 +5,7 @@ tags:
   - DataStructuresAndAlgorithm
 ---
 
-## Array
+## 陣列(Array)
 
 陣列是用來儲存我們的資料，每一個就像是學校的置物櫃，人把各自的東西(元素)放到置物櫃裡，然後寫上我們的座號(索引值)
 

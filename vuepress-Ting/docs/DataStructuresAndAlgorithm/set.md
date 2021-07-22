@@ -5,7 +5,7 @@ tags:
   - DataStructuresAndAlgorithm
 ---
 
-## Set
+## 集合(Set)
 
 集合為無順序性且值不重複
 
