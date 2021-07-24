@@ -7,17 +7,9 @@ tags:
 
 ## 樹(tree)
 
-非循序資料結構、一種分層資料的抽象模型
+![tree01](https://i.imgur.com/QD7xYt2.png)
 
-必須要有根節點以及零至多個子節點
-
-子樹: 子節點與它的後代組成
-
-內部節點: 至少有一個子節點
-
-外部節點(又稱葉節點): 沒有子節點
-
-節點的深度是看祖先節點的數量，而樹的深度是節點深度的最大值
+![tree](https://i.imgur.com/KUH1IzR.png)
 
 ## 二元搜尋樹(BinarySearchTree)
 
