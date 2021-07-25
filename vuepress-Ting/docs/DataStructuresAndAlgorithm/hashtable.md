@@ -53,7 +53,7 @@ console.log(hashtable1.get('Chocolate'));
 
 ### Result:
 
-<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/2mrq65oy/63/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/2mrq65oy/63/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 ```javascript
 class ValuePair {
