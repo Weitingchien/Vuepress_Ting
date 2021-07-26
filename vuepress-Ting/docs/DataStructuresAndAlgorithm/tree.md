@@ -9,7 +9,7 @@ tags:
 
 ![tree01](https://i.imgur.com/blmV1dL.png)
 
-![tree](https://i.imgur.com/KUH1IzR.png)
+![tree](https://i.imgur.com/39LTN9O.png)
 
 ## 二元搜尋樹(BinarySearchTree)
 
@@ -71,5 +71,79 @@ console.log(tree1);
 
 ![BinarySearchTree](https://i.imgur.com/BUZKkOH.png)
 
-當前示意圖
+當前示意圖:
+
 ![Tree02](https://i.imgur.com/GVib0lK.png)
+
+### 實作 中序、先序、後序
+
+要遍歷樹有三種方式:
+
+中序: 由小到大
+
+先序: 根節點->左子節點->右子節點->父節點
+
+後序: 左子節點->右子節點->父節點，最後回到根節點
+
+```javascript
+//中序遍歷(In-Order Traversal)
+	printNode(value){
+	  console.log(value);
+	}
+	inOrderTraverseNode(node, callback){
+	  if(node !== null){
+	    this.inOrderTraverseNode(node.left, callback);
+		callback(node.key);
+		this.inOrderTraverseNode(node.right, callback);
+	  }
+	}
+	inOrderTraverse(callback){
+	  this.inOrderTraverseNode(this.root, callback);
+	}
+```
+
+tree1.inOrderTraverse(tree1.printNode);
+
+以最前面畫的二元搜尋樹來使用中序方式遍歷，並搭配 printNode 方法印出我們節點的值
+
+順序:
+
+![inOrderTraverse](https://i.imgur.com/ZmHHFaf.png)
+
+```javascript
+	preOrderTraverseNode(node, callback){
+	  if(node !== null){
+		  callback(node.key);
+			this.preOrderTraverseNode(node.left, callback);
+			this.preOrderTraverseNode(node.right, callback);
+		}
+	}
+	preOrderTraverse(callback){
+	  this.preOrderTraverseNode(this.root, callback);
+	}
+```
+
+tree1.preOrderTraverse(tree1.printNode);
+
+順序:
+
+![preOrderTraverse](https://i.imgur.com/jEgcTH1.png)
+
+```javascript
+	postOrderTraverseNode(node, callback){
+	  if(node !== null){
+		  this.postOrderTraverseNode(node.left, callback);
+			this.postOrderTraverseNode(node.right, callback);
+			callback(node.key);
+		}
+	}
+	postOrderTraverse(callback){
+	  this.postOrderTraverseNode(this.root, callback);
+	}
+```
+
+tree1.postOrderTraverse(tree1.printNode);
+
+順序:
+
+![postOrderTraverse](https://i.imgur.com/pCZrDYK.png)
