@@ -17,6 +17,10 @@ tags:
 
 二元搜尋樹左邊節點的值必須 < 父節點的值，而右邊節點的值必須 >= 父節點
 
+### Result:
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/w18dm7jh/292/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 ### 實作 insert(key)、insertNode(root, newNode)方法
 
 一開始根節點為 null -> ![tree02](https://i.imgur.com/xPqeqc7.png) 所以當新增節點時要在根節點為 null 時把節點插入在根節點上(插入鍵為 20) -> ![tree01](https://i.imgur.com/kmHClnj.png) 如果不為 null 代表已經有節點了就呼叫 insetNode 方法，第一個參數為 node 代表根節點，第二個參數 newNode 代表我們要插入的節點
@@ -147,3 +151,50 @@ tree1.postOrderTraverse(tree1.printNode);
 順序:
 
 ![postOrderTraverse](https://i.imgur.com/pCZrDYK.png)
+
+### 實作 尋找最小、最大的節點
+
+```javascript
+	minNode(node){
+	  while(node && node.left !== null){
+		  node = node.left;
+		}
+		return node;
+	}
+	min(){
+	  return this.minNode(this.root);
+	}
+	maxNode(node){
+	  while(node && node.right !== null){
+		  node = node.right;
+		}
+		return node;
+	}
+	max(){
+	  return this.maxNode(this.root);
+	}
+```
+
+### 實作 尋找特定的鍵
+
+```javascript
+	searchNode(node, key){
+	  if(node === null){
+		  return false;
+		}
+		if(node.key > key){
+		  return this.searchNode(node.left, key);
+		} else if(node.key < key){
+		  return this.searchNode(node.right, key);
+		} else {
+		  return true;
+		}
+	}
+	search(key){
+	  return this.searchNode(this.root, key);
+	}
+```
+
+### 實作 刪除節點
+
+待新增...
