@@ -197,4 +197,59 @@ tree1.postOrderTraverse(tree1.printNode);
 
 ### 實作 刪除節點
 
+要刪除節點總共可以分成以下這些情況:
+
+1. 如果要刪除的節點為 null，則直接回傳 null
+
+2. 如果當前節點的鍵大於要找的節點的鍵則繼續往左側的下一個節點、當前節點的鍵小於要找的節點的鍵往右側的下一個節點
+
+3. 當前節點的鍵等於要找的節點的鍵: 找到我們要找的節點還必須分成 3 種情況: 1. 此節點是葉節點 2. 此節點的左側節點是 null 3.此節點的右側節點是 null
+
+4. 最後的情況是此節點有 2 個子節點
+
+```javascript
+	removeNode(node, key){
+	  if(node === null){
+		  return null;
+		}
+        // return node是為了要返回更新後的節點
+        // 如果當前節點的鍵比要找的鍵大，就繼續往下一個左側節點
+		if(node.key > key){
+		    node.left = this.removeNode(node.left, key);
+			return node;
+          // 如果當前節點的鍵比要找的鍵小，就繼續往下一個右側節點
+		} else if(node.key < key){
+		    node.right = this.removeNode(node.right, key);
+			return node;
+          // 當前節點的鍵等於要找的鍵
+		} else{
+            // 如果當前節點左側與右側都為null代表這是葉節點，要刪除這個節點只需要把null賦值給這個節點，並回傳更新後的節點
+		    if(node.left === null && node.right === null){
+		       node = null;
+			   return node;
+			}
+            // 如果當前節點左側為null，但當前節點右側有節點時，就讓當前節點等於當前節點的右側節點，並回傳更新後的節點
+		    if(node.left === null){
+			   node = node.right;
+			   return node;
+              // 如果當前節點右側為null，但當前節點左側有節點時，就讓當前節點等於當前節點的左側節點，並回傳更新後的節點
+			} else if(node.right === null){
+			   node = node.left;
+			   return node;
+			}
+            // 最後的一種情況是這個節點有2個子節點
+            // 使用之前的minNode方法找到右側子樹中最小的節點
+			const aux = this.minNode(node.right);
+            // 把找到最小節點的鍵賦值給要刪除節點的鍵
+			node.key = aux.key;
+			// 因為前面我們把最小節點的鍵賦值給了要刪除節點的鍵，所以會產生2個相同的鍵，要把舊的鍵移除，並且一樣回傳更新後的節點
+			node.right = this.removeNode(node.right, aux.key);
+			return node;
+		}
+	}
+	remove(key){
+	  this.root = this.removeNode(this.root, key);
+	}
+```
+
 待新增...
