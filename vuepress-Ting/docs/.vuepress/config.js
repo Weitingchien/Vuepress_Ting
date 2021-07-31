@@ -155,7 +155,8 @@ module.exports = {
           '/DataStructuresAndAlgorithm/set.md',
           '/DataStructuresAndAlgorithm/dictionary.md',
           '/DataStructuresAndAlgorithm/hashtable.md',
-          '/DataStructuresAndAlgorithm/tree.md'
+          '/DataStructuresAndAlgorithm/tree.md',
+          '/DataStructuresAndAlgorithm/sorting.md'
         ]
       }
     ]
