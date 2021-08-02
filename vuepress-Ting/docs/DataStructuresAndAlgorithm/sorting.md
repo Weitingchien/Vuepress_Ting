@@ -5,7 +5,7 @@ tags:
   - DataStructuresAndAlgorithm
 ---
 
-## 冒泡排序(sorting)
+## 冒泡排序(bubbleSort)
 
 時間複雜度 O(n²)
 
@@ -33,8 +33,9 @@ class ArrayList {
     [this.array[A], this.array[B]] = [this.array[B], this.array[A]];
   }
   bubbleSort() {
-    for (let i = 0; i < this.array.length; i++) {
-      for (let j = 0; j < this.array.length - i - 1; j++) {
+    let length = this.array.length;
+    for (let i = 0; i < length; i++) {
+      for (let j = 0; j < length - i - 1; j++) {
         if (this.array[j] > this.array[j + 1]) {
           this.swap(j, j + 1);
         }
@@ -57,7 +58,7 @@ const nonSortedArray = arraySize => {
 nonSortedArray(4);
 ```
 
-## 選擇排序(sorting)
+## 選擇排序(selectionSort)
 
 時間複雜度 O(n²)
 
@@ -86,4 +87,31 @@ nonSortedArray(4);
 		}
 	}
 
+```
+
+## 插入排序(insertionSort)
+
+時間複雜度 O(n²)
+
+從第二項往前比，是要插入到第一項前面還是保持原本位置，接著比較第三項以此類推
+
+### Result:
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/qngrLox4/43/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+```javascript
+	insertionSort(){
+	  let temp;
+	  let length = this.array.length;
+	  let j;
+	  for(let i=1; i<length; i++){
+	    j = i;
+		temp = this.array[i];
+		while(j>0 && this.array[j-1] > temp){
+		  this.array[j] = this.array[j-1];
+		  j--;
+		}
+		this.array[j] = temp;
+	  }
+	}
 ```
