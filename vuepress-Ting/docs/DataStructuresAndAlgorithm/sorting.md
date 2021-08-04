@@ -115,3 +115,47 @@ nonSortedArray(4);
 	  }
 	}
 ```
+
+## 合併排序(mergeSort)
+
+時間複雜度 O(n log n)
+
+一種分治演算法(Divide and Conquer)，表示我們把一整個問題變成一個一個小問題，藉由解決每一個小問題來解決整個問題
+
+把陣列一半分割直到剩下一個元素，接下來把小陣列合併成一個大陣列
+
+### Result:
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/8jtcvsz2/117/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+```javascript
+	merge(left, right){
+	  const result = [];
+		let al=0;
+		let ar=0;
+		while(al < left.length && ar < right.length){
+		  if(left[al] < right[ar]){
+			  result.push(left[al]);
+				al++
+			} else{
+			  result.push(right[ar]);
+				ar++
+			}
+		}
+		//return result.concat(left.slice(al)).concat(right.slice(ar));
+		return [...result, ...left.slice(al), ...right.slice(ar)];
+	}
+	mergeSortRecursion(array){
+	  let length = array.length;
+	  if(length === 1){
+		  return array;
+		}
+		let mid = Math.floor(length / 2);
+		let left = array.slice(0, mid);
+		let right = array.slice(mid, length);
+		return this.merge(this.mergeSortRecursion(left), this.mergeSortRecursion(right));
+	}
+	mergeSort(){
+	  this.array = this.mergeSortRecursion(this.array);
+	}
+```
