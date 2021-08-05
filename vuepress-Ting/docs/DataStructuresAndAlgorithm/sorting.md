@@ -33,7 +33,7 @@ class ArrayList {
     [this.array[A], this.array[B]] = [this.array[B], this.array[A]];
   }
   bubbleSort() {
-    let length = this.array.length;
+    const length = this.array.length;
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
         if (this.array[j] > this.array[j + 1]) {
@@ -71,7 +71,7 @@ nonSortedArray(4);
 ```javascript
 
 	selectionSort(){
-	  let length = this.array.length;
+	  const length = this.array.length;
 	  for(let i=0; i<length - 1; i++){
 		  let minIndex = i;
 			for(let j=i; j<length; j++){
@@ -102,7 +102,7 @@ nonSortedArray(4);
 ```javascript
 	insertionSort(){
 	  let temp;
-	  let length = this.array.length;
+	  const length = this.array.length;
 	  let j;
 	  for(let i=1; i<length; i++){
 	    j = i;
@@ -120,9 +120,11 @@ nonSortedArray(4);
 
 時間複雜度 O(n log n)
 
-一種分治演算法(Divide and Conquer)，表示我們把一整個問題變成一個一個小問題，藉由解決每一個小問題來解決整個問題
+使用分治法(Divide and Conquer): 把問題分成多個子問題，藉由解決每一個子問題來解決整個問題
 
-把陣列一半分割直到剩下一個元素，接下來把小陣列合併成一個大陣列
+把陣列對半分割直到剩下一個元素，接下來開始排序，完成排序後把小陣列合併成一個大陣列
+
+![mergeSort](https://i.imgur.com/L2JN5fl.png)
 
 ### Result:
 
@@ -142,17 +144,16 @@ nonSortedArray(4);
 				ar++
 			}
 		}
-		//return result.concat(left.slice(al)).concat(right.slice(ar));
 		return [...result, ...left.slice(al), ...right.slice(ar)];
 	}
 	mergeSortRecursion(array){
-	  let length = array.length;
+	  const length = array.length;
 	  if(length === 1){
 		  return array;
 		}
-		let mid = Math.floor(length / 2);
-		let left = array.slice(0, mid);
-		let right = array.slice(mid, length);
+		const mid = Math.floor(length / 2);
+		const left = array.slice(0, mid);
+		const right = array.slice(mid, length);
 		return this.merge(this.mergeSortRecursion(left), this.mergeSortRecursion(right));
 	}
 	mergeSort(){
