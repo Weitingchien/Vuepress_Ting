@@ -5,11 +5,13 @@ tags:
   - DataStructuresAndAlgorithm
 ---
 
-## 冒泡排序(bubbleSort)
+## 氣泡排序(bubbleSort)
 
 時間複雜度 O(n²)
 
 第一個大於第二個就互換位置
+
+最佳情況只要跑 n 次
 
 ![bubbleSort](https://i.imgur.com/2lwNOmz.gif)
 
@@ -33,8 +35,8 @@ class ArrayList {
     [this.array[A], this.array[B]] = [this.array[B], this.array[A]];
   }
   bubbleSort() {
-    const length = this.array.length;
-    for (let i = 0; i < length; i++) {
+    let length = this.array.length;
+    for (let i = 0; i < length - 1; i++) {
       for (let j = 0; j < length - i - 1; j++) {
         if (this.array[j] > this.array[j + 1]) {
           this.swap(j, j + 1);
@@ -69,7 +71,6 @@ nonSortedArray(4);
 <iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/59s1g6vu/38/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 ```javascript
-
 	selectionSort(){
 	  const length = this.array.length;
 	  for(let i=0; i<length - 1; i++){
@@ -86,7 +87,6 @@ nonSortedArray(4);
 			}
 		}
 	}
-
 ```
 
 ## 插入排序(insertionSort)
@@ -101,18 +101,14 @@ nonSortedArray(4);
 
 ```javascript
 	insertionSort(){
-	  let temp;
 	  const length = this.array.length;
-	  let j;
-	  for(let i=1; i<length; i++){
-	    j = i;
-		temp = this.array[i];
-		while(j>0 && this.array[j-1] > temp){
-		  this.array[j] = this.array[j-1];
-		  j--;
+		for(let i=0; i<length; i++){
+		  for(let j=i-1; j>=0; j--){
+			  if(this.array[j]>this.array[j+1]){
+				  this.swap(j, j+1);
+				}
+			}
 		}
-		this.array[j] = temp;
-	  }
 	}
 ```
 
@@ -160,3 +156,5 @@ nonSortedArray(4);
 	  this.array = this.mergeSortRecursion(this.array);
 	}
 ```
+
+## 快速排序(quickSort)
