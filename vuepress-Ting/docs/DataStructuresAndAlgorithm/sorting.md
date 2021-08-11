@@ -161,4 +161,54 @@ nonSortedArray(4);
 
 時間複雜度 O(n log n)
 
-陣列中建立一個基準(選中間的元素)，並且建立 2 個指位器
+陣列中選擇一個元素為基準，並且選擇另外 2 個元素作為指位器
+
+比基準值小的元素必須在左邊，相反的比基準值大的元素要放在右邊
+
+使用遞迴重複上面 2 個動作
+
+### Result:
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/Lstn64mo/73/embedded/js,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+```javascript
+	swap(array, A, B){
+	  [array[A], array[B]] = [array[B], array[A]];
+	}
+	partition(array, left, right){
+	  const pivot = array[Math.floor((left + right) / 2)];
+		let i = left;
+		let j = right;
+		while(i <= j){
+		  while(array[i] < pivot){
+			 i++;
+			}
+			while(array[j] > pivot){
+			 j--;
+			}
+			if(i <= j){
+			  this.swap(array, i, j);
+				i++;
+				j--;
+			}
+		}
+		console.log(i);
+		return i;
+	}
+	quick(array, left, right){
+	  let index;
+		if(array.length > 1){
+		  index = this.partition(array, left, right);
+			if(left < index-1){
+			  this.quick(array, left, index-1);
+			}
+			if(index < right){
+			  this.quick(array, index, right);
+			}
+		}
+		return array;
+	}
+	quickSort(){
+	  this.array = this.quick(this.array, 0, this.array.length-1);
+	}
+```
