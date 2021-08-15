@@ -192,7 +192,6 @@ nonSortedArray(4);
 				j--;
 			}
 		}
-		console.log(i);
 		return i;
 	}
 	quick(array, left, right){
