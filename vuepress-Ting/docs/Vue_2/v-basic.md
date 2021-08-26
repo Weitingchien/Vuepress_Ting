@@ -32,7 +32,9 @@ Vue 3.0.0: 這邊使用 Composition API ，setup()函式會在元件建立之前
 
 ### Form
 
-...待新增
+(Vue 2.6.12 - Options API)
+
+<iframe width="100%" height="300" src="//jsfiddle.net/Chris_Walter/6dpk5fq4/13/embedded/result,js,html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 ### Drop-down menu
 
