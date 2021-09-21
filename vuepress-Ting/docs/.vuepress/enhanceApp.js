@@ -15,7 +15,6 @@ Vue.use(Vssue, {
   // 設置要使用平台的 api
   api: GithubV4,
 
-  // 在这里设置你使用的平台的 OAuth App 配置
   // 在這裡設置你使用的平台的 OAuth App 配置
   owner: 'Weitingchien',
   repo: 'Vuepress_Ting',
