@@ -137,9 +137,14 @@ module.exports = {
         ]
       },
       {
-        title: 'Vue.js',
+        title: 'Vue',
         path: '',
         children: ['/Vue_2/v-lifecycle', '/Vue_2/v-basic']
+      },
+      {
+        title: 'React',
+        path: '',
+        children: ['/React/basic', '/React/lifecycle']
       },
       {
         title: 'Node.js',
