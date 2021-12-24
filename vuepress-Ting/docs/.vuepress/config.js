@@ -161,7 +161,8 @@ module.exports = {
           '/DataStructuresAndAlgorithm/dictionary.md',
           '/DataStructuresAndAlgorithm/hashtable.md',
           '/DataStructuresAndAlgorithm/tree.md',
-          '/DataStructuresAndAlgorithm/sorting.md'
+          '/DataStructuresAndAlgorithm/sorting.md',
+          '/DataStructuresAndAlgorithm/reversearray.md'
         ]
       }
     ]

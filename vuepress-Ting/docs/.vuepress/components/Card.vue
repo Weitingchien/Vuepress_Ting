@@ -11,7 +11,7 @@
         </router-link>
       </div>
       <div class="col-sm">
-        <router-link to="/Vue_2/v-lifecycle">
+        <router-link to="/React/lifecycle">
           <img
             src="https://i.imgur.com/F6spPOb.png"
             height="157.5"
