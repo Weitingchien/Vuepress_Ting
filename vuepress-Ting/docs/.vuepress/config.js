@@ -162,7 +162,8 @@ module.exports = {
           '/DataStructuresAndAlgorithm/hashtable.md',
           '/DataStructuresAndAlgorithm/tree.md',
           '/DataStructuresAndAlgorithm/sorting.md',
-          '/DataStructuresAndAlgorithm/reversearray.md'
+          '/DataStructuresAndAlgorithm/reversearray.md',
+          '/DataStructuresAndAlgorithm/palindromenumber.md'
         ]
       }
     ]
