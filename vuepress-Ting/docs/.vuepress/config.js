@@ -163,7 +163,8 @@ module.exports = {
           '/DataStructuresAndAlgorithm/tree.md',
           '/DataStructuresAndAlgorithm/sorting.md',
           '/DataStructuresAndAlgorithm/reversearray.md',
-          '/DataStructuresAndAlgorithm/palindromenumber.md'
+          '/DataStructuresAndAlgorithm/palindromenumber.md',
+          '/DataStructuresAndAlgorithm/romantointeger.md'
         ]
       }
     ]

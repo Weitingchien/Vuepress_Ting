@@ -7,7 +7,7 @@ tags:
 
 ## 雜湊表(HashTable)
 
-使用雜湊函式可以快速檢索值
+使用雜湊函式可以快速檢索值，常用於儲存使用者的電子郵件
 
 使用 String 類別中的 charCodeAt 方法返回 hash 值
 
