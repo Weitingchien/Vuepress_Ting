@@ -1,5 +1,5 @@
 ---
-title:
+title: Palindrome Number(迴文數)
 date: 2021-12-25
 tags:
   - DataStructuresAndAlgorithm
